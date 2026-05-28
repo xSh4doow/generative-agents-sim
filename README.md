@@ -1,170 +1,85 @@
-# Micro-Simulação Social com Agentes Generativos
+# Generative Agents — micro-simulação
 
-Recriação simplificada da arquitetura do paper *Generative Agents: Interactive
-Simulacra of Human Behavior* (Park et al., UIST 2023). Cinco agentes com
-persona, memória, reflexão e planejamento convivem numa vila textual por 3 dias.
+Cinco moradores de uma vila textual conversam, lembram, refletem e se planejam ao longo de 3 dias virtuais. Recriação reduzida da arquitetura do paper *Generative Agents: Interactive Simulacra of Human Behavior* (Park et al., UIST 2023).
 
-**Grupo G7** — Tópicos em Engenharia de Software · PUC-Campinas · 2026/1
+> Grupo G7 · Tópicos em Engenharia de Software · PUC-Campinas · 2026/1
 
----
-
-## Sobre o Projeto
-
-Cada agente tem persona detalhada, mantém um *memory stream* indexado por
-recência, relevância e importância, gera reflexões periódicas e planeja
-sua agenda diária. A simulação avalia duas métricas:
-
-- **Consistência de persona** — quão alinhadas as ações de cada agente estão
-  com sua bio (cosine similarity sobre embeddings, ou TF-IDF no modo mock).
-- **Propagação de informação** — a partir de uma info-semente injetada na
-  Helena ("vai ter uma feira de artesanato no sábado"), quantos agentes ficam
-  sabendo ao longo dos 3 dias e quando.
-
-## Arquitetura
-
-```
-Simulation
-├── TimeManager (dias × horas)
-├── Village (locais + ocupantes)
-├── PropagationTracker (rastreia info-semente)
-└── Agent ×5
-    ├── persona (bio, traits, known_info)
-    ├── MemoryStream — observation | reflection | plan | conversation
-    │   retrieve = α·recência + β·relevância + γ·importância
-    ├── ReflectionModule (insights de alto nível)
-    ├── DailyPlanner (agenda 7h–21h)
-    └── decide_interaction + converse
-                │
-                ▼
-        LLMClient ─┬─ OpenAIClient  (modo llm)
-                   └─ MockClient    (modo mock)
-```
-
-Diagrama detalhado em [docs/architecture.md](docs/architecture.md).
-
-## Como Rodar
-
-### Pré-requisitos
-
-- Python 3.11+
-- (Opcional) Chave de API OpenAI para o modo `llm`
-
-### Instalação
+## Rodando
 
 ```bash
-git clone https://github.com/SEU-USUARIO/generative-agents-sim.git
-cd generative-agents-sim
-python3 -m venv .venv
-source .venv/bin/activate    # Linux/Mac
-# .venv\Scripts\activate     # Windows
+python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env          # opcional; cole sua chave OpenAI
+python main.py --mode mock --verbose
 ```
 
-### Execução
+Pra rodar com LLM real, copia `.env.example` pra `.env`, cola sua `OPENAI_API_KEY`, e troca o modo:
 
 ```bash
-# Modo demo (sem API key, respostas via templates)
-python main.py --mode mock --verbose
-
-# Modo com LLM real (requer OPENAI_API_KEY no .env)
 python main.py --mode llm --verbose
-
-# Rodar 1 dia só pra testar rápido
-python main.py --mode mock --days 1
 ```
 
-### Flags
+`--days N` controla quantos dias simular (default 3). `--output DIR` muda a pasta de saída (default `output/`).
 
-| Flag        | Default     | Descrição                                       |
-|-------------|-------------|-------------------------------------------------|
-| `--mode`    | `mock`      | `mock` (templates) ou `llm` (chamadas OpenAI)   |
-| `--days`    | `3`         | Quantos dias virtuais simular                   |
-| `--output`  | `output/`   | Pasta de saída para os logs                     |
-| `--verbose` | `False`     | Imprime cada hora simulada no terminal          |
+## O que sai
 
-## Saídas
-
-Ao rodar, três arquivos são gerados em `output/`:
-
-- `simulation_log.json` — log completo (conversas, reflexões, propagação)
-- `conversations.md` — todas as conversas geradas, em markdown legível
-- `summary.md` — resumo com métricas e timeline de propagação
-
-E no terminal, ao final:
+No terminal, no final da simulação, vem o resumo das duas métricas:
 
 ```
-📊 AVALIAÇÃO
 --- Consistência de persona ---
-   Helena: similaridade média = 0.39 (n=30, método=embeddings)
-   ...
+    Helena: similaridade média = 0.045 (n=30, método=tfidf)
+   Roberto: similaridade média = 0.044 (n=30, método=tfidf)
+    Camila: similaridade média = 0.048 (n=30, método=tfidf)
+    Marcos: similaridade média = 0.049 (n=30, método=tfidf)
+     Júlia: similaridade média = 0.047 (n=30, método=tfidf)
+
 --- Propagação de informação ---
-   Taxa final: 100% (5/5)
-   Timeline:
+  Info-semente: "Vai ter uma feira de artesanato no próximo sábado na praça"
+  Taxa final: 100% (5/5)
       Helena — Dia 1, 07h
       Camila — Dia 1, 10h
-      ...
+       Júlia — Dia 1, 12h
+     Roberto — Dia 1, 14h
+      Marcos — Dia 1, 17h
 ```
 
-## Estrutura do Repositório
+E três arquivos em `output/`:
 
-```
-.
-├── main.py                 # entry point + argparse
-├── config/
-│   ├── personas.py         # 5 personas (Helena, Roberto, Camila, Marcos, Júlia)
-│   └── settings.py         # constantes (locais, dias, seed info)
-├── src/
-│   ├── agent.py            # classe Agent
-│   ├── memory.py           # MemoryStream + recuperação 3-fatores
-│   ├── reflection.py       # módulo de reflexão
-│   ├── planner.py          # planejador diário
-│   ├── environment.py      # Village + TimeManager
-│   ├── simulation.py       # loop principal
-│   └── llm.py              # OpenAIClient + MockClient
-├── evaluation/
-│   ├── consistency.py      # cosine/TF-IDF persona × ações
-│   └── propagation.py      # rastreamento da info-semente
-├── output/                 # logs gerados (gitignored exceto .gitkeep)
-└── docs/
-    └── architecture.md     # diagrama textual da arquitetura
-```
+- `summary.md` — resumo legível com métricas + timeline da info-semente
+- `conversations.md` — todos os diálogos formatados em markdown
+- `simulation_log.json` — log completo, bom pra análise posterior
 
-## Métricas de Avaliação
+## Como funciona
 
-- **Consistência de persona** — para cada agente, comparamos sua bio com cada
-  ação/observação/reflexão registrada. No modo `llm` usamos embeddings
-  (`text-embedding-3-small`) + cosine similarity. No modo `mock` o proxy é
-  TF-IDF (scikit-learn).
-- **Propagação de informação** — uma frase ("vai ter uma feira de artesanato no
-  próximo sábado") é injetada apenas na Helena no início do Dia 1. A cada
-  conversa, checamos se as keywords da semente aparecem e se um participante
-  já informado conversou com um não-informado. Rastreamos quem soube quando.
+Cada agente carrega quatro coisas:
 
-## Equipe
+- **Persona** — bio, traços, casa de partida, e o que ele já sabe (`known_info`).
+- **Memory stream** — observações, conversas e reflexões. A recuperação combina três fatores normalizados: `α·recência + β·relevância + γ·importância`. No modo mock a relevância é zero (sem embeddings) e o stream pesa só recência e importância.
+- **Planner** — antes de cada dia, gera uma agenda 7h–21h via LLM, fiel à personalidade. O parser tolera saída fora de formato e preenche horas faltantes.
+- **Reflection** — quando o agente acumula importância > 50 ou ≥ 8 observações desde a última reflexão, ele sintetiza 3 insights de alto nível e os escreve de volta no stream com peso alto.
 
-| Integrante       | Responsabilidade                                    |
-|------------------|-----------------------------------------------------|
-| Pedro Rocha      | Desenvolvimento central, arquitetura, integração    |
-| Victor Accorsi   | Documentação, README, relatórios                    |
-| Luiza Pedroso    | Pesquisa, personas, módulo de reflexão              |
-| Breno Figueira   | Módulo de ambiente, simulação                       |
-| Milena Capelli   | Pipeline de avaliação, métricas, propagação         |
+A cada hora, a simulação move todos pro local planejado, deixa pares co-locados decidir se conversam, gera diálogo se quiserem, propaga a info-semente quando ela aparece, e dispara reflexão quando o trigger fechou. No início de cada novo dia, todos replanjam.
 
-## Referências
+O `LLMClient` tem duas implementações com a mesma interface. `OpenAIClient` chama `gpt-4o-mini` para texto e `text-embedding-3-small` para embeddings. `MockClient` detecta o intent do prompt (planejar, refletir, decidir interação, conversar) e devolve template variado — funciona sem API key e é o que o professor consegue rodar direto.
 
-1. Park, J. S., O'Brien, J., Cai, C. J., Morris, M. R., Liang, P., & Bernstein,
-   M. S. (2023). *Generative Agents: Interactive Simulacra of Human Behavior*.
-   UIST '23.
-2. Wang, L., Ma, C., Feng, X., et al. (2024). *A Survey on Large Language
-   Model based Autonomous Agents*. Frontiers of Computer Science.
-3. Xi, Z., Chen, W., Guo, X., et al. (2023). *The Rise and Potential of Large
-   Language Model Based Agents: A Survey*. arXiv:2309.07864.
-4. Sumers, T. R., Yao, S., Narasimhan, K., & Griffiths, T. L. (2023).
-   *Cognitive Architectures for Language Agents*. TMLR.
-5. Shao, Y., Li, L., Dai, J., & Qiu, X. (2023). *Character-LLM: A Trainable
-   Agent for Role-Playing*. EMNLP '23.
-6. OpenAI (2024). *GPT-4o-mini Technical Report*. https://openai.com/research/
-7. Tan, F., Wang, Y., Zheng, R., et al. (2023). *Multi-Agent Collaboration:
-   Harnessing the Power of Intelligent LLM Agents*. arXiv:2306.03314.
-8. Andreas, J. (2022). *Language Models as Agent Models*. EMNLP Findings.
+Detalhamento da arquitetura em [`docs/architecture.md`](docs/architecture.md).
+
+## Avaliação
+
+- **Consistência de persona** — cosine similarity entre a bio do agente e cada ação/observação/reflexão registrada. Embeddings no modo `llm`, TF-IDF (scikit-learn) no `mock` como proxy.
+- **Propagação de informação** — só a Helena começa o Dia 1 sabendo que vai ter feira de artesanato no sábado. A cada conversa, checamos se as keywords da semente aparecem e se um agente já informado falou com um não-informado. O resultado é a timeline de quem soube quando e a taxa final de propagação.
+
+## Time
+
+| Integrante | Responsabilidade |
+|---|---|
+| Pedro Rocha | Arquitetura, integração, módulos centrais |
+| Victor Accorsi | Documentação |
+| Luiza Pedroso | Personas, módulo de reflexão |
+| Breno Figueira | Ambiente, loop de simulação |
+| Milena Capelli | Pipeline de avaliação, propagação |
+
+## Referência principal
+
+Park, J. S., O'Brien, J., Cai, C. J., Morris, M. R., Liang, P., & Bernstein, M. S. (2023). *Generative Agents: Interactive Simulacra of Human Behavior*. Em *Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology* (UIST '23).
+
+> As demais referências ABNT do Checkpoint 1 estão no relatório do grupo.
