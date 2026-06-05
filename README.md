@@ -4,6 +4,14 @@ Cinco moradores de uma vila textual conversam, lembram, refletem e se planejam a
 
 > Grupo G7 · Tópicos em Engenharia de Software · PUC-Campinas · 2026/1
 
+## 🎬 Demo
+
+![Demo da simulação](output/demo.gif)
+
+A demo mostra a simulação rodando em modo mock por 3 dias virtuais: os agentes
+planejam o dia, se encontram nos locais da vila e conversam, propagando a
+info-semente naturalmente até chegar a 100% dos moradores.
+
 ## Rodando
 
 ```bash
@@ -65,8 +73,44 @@ Detalhamento da arquitetura em [`docs/architecture.md`](docs/architecture.md).
 
 ## Avaliação
 
-- **Consistência de persona** — cosine similarity entre a bio do agente e cada ação/observação/reflexão registrada. Embeddings no modo `llm`, TF-IDF (scikit-learn) no `mock` como proxy.
-- **Propagação de informação** — só a Helena começa o Dia 1 sabendo que vai ter feira de artesanato no sábado. A cada conversa, checamos se as keywords da semente aparecem e se um agente já informado falou com um não-informado. O resultado é a timeline de quem soube quando e a taxa final de propagação.
+Pra gerar métricas e gráficos de uma vez, use o `run_evaluation.py` — ele roda a
+simulação, salva os logs e produz `metrics.json` + dois gráficos em `output/`:
+
+```bash
+python run_evaluation.py --mode llm --verbose    # ou --mode mock
+```
+
+Saídas: `output/metrics.json`, `output/consistency_chart.png`,
+`output/propagation_chart.png`.
+
+**Consistência de persona.** Cosine similarity entre a bio do agente e suas
+falas/reflexões, via `text-embedding-3-small`. Como o range absoluto desse
+embedding é comprimido (textos relacionados ficam ~0,3–0,5), um limiar fixo não
+faz sentido; a medida honesta é **relativa**: cada agente deveria ser mais
+similar à *própria* persona do que às *outras*.
+
+![Consistência de persona](output/consistency_chart.png)
+
+> Resultado: **5/5 agentes** ficaram mais próximos da própria persona do que das
+> outras (Δ médio +0,05) — as personas se mantêm distinguíveis e consistentes.
+> O `augment_consistency.py` recalcula essa comparação a partir do log salvo
+> (só embeddings, sem re-rodar a simulação cara).
+
+**Propagação de informação.** Só a Helena começa o Dia 1 sabendo da feira de
+artesanato. A cada conversa, checamos se as keywords da semente aparecem e se um
+agente informado falou com um não-informado. A info chegou a **100% (5/5)** dos
+moradores ainda no Dia 1.
+
+![Propagação da info-semente](output/propagation_chart.png)
+
+> No modo `mock`, a consistência usa TF-IDF (scikit-learn) como proxy sem API —
+> útil pra reprodutibilidade, mas com sinal bem mais fraco que os embeddings.
+
+## Poster (Checkpoint 3)
+
+Draft do painel A1 em [`poster/`](poster/) — `poster.html` (fonte) e
+`poster_a1.pdf` (594 × 841 mm, pronto pra gráfica). Gera o QR do repo com
+`qrcode` e converte HTML→PDF via Chrome headless.
 
 ## Time
 
