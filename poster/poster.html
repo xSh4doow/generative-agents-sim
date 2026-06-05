@@ -165,16 +165,21 @@ tr.ours td b { color: var(--verde); }
 .chart-card img { width: 100%; height: auto; max-height: 62mm; object-fit: contain; display: block; }
 .chart-cap { font-size: 12pt; color: var(--cinza); text-align: center; margin-top: 0.5mm; }
 
-/* ---------------- Conversa ---------------- */
-.chat {
-  background: #fff; border: 1.5px solid var(--azul-medio);
-  border-left: 6px solid var(--azul-medio);
-  border-radius: 3mm; padding: 3.5mm 5mm; margin-top: 3mm;
+/* ---------------- Conversa (terminal do demo) ---------------- */
+.term {
+  background: #0f0f12; border: 1px solid #2a2a32;
+  border-radius: 3mm; margin-top: 3mm; overflow: hidden;
+  font-family: 'Fira Code', 'Consolas', monospace;
 }
-.chat-head { font-family: 'Poppins'; font-weight: 600; font-size: 14.5pt; color: var(--azul-escuro); margin-bottom: 2mm; }
-.chat-line { font-size: 15pt; line-height: 1.26; margin-bottom: 1.5mm; }
-.chat-line b { color: var(--azul-medio); }
-.chat-seed { color: var(--verde); font-weight: 700; }
+.term-bar { background: #20212a; padding: 1.6mm 4mm; display: flex; align-items: center; gap: 2.2mm; }
+.term-bar i { width: 3mm; height: 3mm; border-radius: 50%; display: inline-block; }
+.term-title { color: #8a8d99; font-size: 11pt; margin-left: 2mm; }
+.term-body { padding: 2.8mm 5mm 3.2mm 5mm; }
+.term-line { font-size: 13pt; line-height: 1.28; color: #dcdee4; margin-bottom: 1mm; }
+.term-line .who { color: #5abedc; }
+.term-loc { color: #e6c86e; margin-bottom: 1.6mm; }
+.term-seed { color: #5fc882; font-weight: 700; }
+.term-prop { color: #5fc882; font-size: 12.5pt; margin-top: 1mm; }
 
 /* ---------------- Discussão (2 colunas) ---------------- */
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; }
@@ -447,12 +452,19 @@ tr.ours td b { color: var(--verde); }
         <div class="chart-cap">Propagação da info-semente no tempo</div>
       </div>
     </div>
-    <div class="chat">
-      <div class="chat-head">☕ Café Aurora — Dia 1, 11h · conversa gerada por GPT-4o-mini</div>
-      <div class="chat-line"><b>Helena:</b> Camila, você soube que <span class="chat-seed">vai ter uma feira de artesanato na praça no próximo sábado</span>? Vai ser uma delícia!</div>
-      <div class="chat-line"><b>Camila:</b> Não sabia! Que legal! Vai ter muita coisa? Estou precisando de novas inspirações para minhas pinturas.</div>
-      <div class="chat-line"><b>Helena:</b> Ah, com certeza! Vão ter artesãos de toda a vila — até as cerâmicas lindas do Joaquim.</div>
-      <div class="chat-line"><b>Camila:</b> Que ótimo! Vou passar lá, então. Espero que as pessoas sejam receptivas, ainda estou tentando me enturmar por aqui.</div>
+    <div class="term">
+      <div class="term-bar">
+        <i style="background:#ed6a5e"></i><i style="background:#f5bf4f"></i><i style="background:#62c554"></i>
+        <span class="term-title">demo · python main.py --mode llm</span>
+      </div>
+      <div class="term-body">
+        <div class="term-line term-loc">[cafe] Helena ↔ Camila — Dia 1, 11h</div>
+        <div class="term-line"><span class="who">Helena:</span> Camila, você soube que <span class="term-seed">vai ter uma feira de artesanato na praça no próximo sábado</span>?</div>
+        <div class="term-line"><span class="who">Camila:</span> Não sabia! Que legal! Estou precisando de novas inspirações para minhas pinturas.</div>
+        <div class="term-line"><span class="who">Helena:</span> Vão ter artesãos de toda a vila — até as cerâmicas do Joaquim.</div>
+        <div class="term-line"><span class="who">Camila:</span> Vou passar lá! Ainda estou tentando me enturmar por aqui.</div>
+        <div class="term-line term-prop">&gt;&gt; Camila ficou sabendo da feira!</div>
+      </div>
     </div>
   </section>
 
