@@ -1,0 +1,1330 @@
+{
+  "mode": "llm",
+  "num_days": 3,
+  "log": [
+    {
+      "type": "conversation",
+      "time": [
+        1,
+        9
+      ],
+      "location": "praca",
+      "participants": [
+        "Marcos",
+        "Camila"
+      ],
+      "topic": "a organização do próximo evento comunitário",
+      "turns": [
+        {
+          "speaker": "Marcos",
+          "text": "Oi, Camila! Eu estava pensando no próximo evento comunitário. Precisamos de ideias e um bom planejamento."
+        },
+        {
+          "speaker": "Camila",
+          "text": "Oi, Marcos! Eu adoraria ajudar. Tenho algumas ideias de atividades artísticas que poderiam trazer mais cor para a vila!"
+        },
+        {
+          "speaker": "Marcos",
+          "text": "Isso é ótimo! Mas precisamos definir quais atividades são viáveis e quanto tempo vamos precisar para organizar tudo."
+        },
+        {
+          "speaker": "Camila",
+          "text": "Claro! Posso fazer alguns esboços e propor uma exposição com as crianças da vila. O que acha?"
+        }
+      ],
+      "propagation_event": []
+    },
+    {
+      "type": "conversation",
+      "time": [
+        1,
+        10
+      ],
+      "location": "cafe",
+      "participants": [
+        "Helena",
+        "Júlia"
+      ],
+      "topic": "a feira de artesanato que vai ter no próximo sábado!",
+      "turns": [
+        {
+          "speaker": "Helena",
+          "text": "Júlia, você ficou sabendo da feira de artesanato que vai ter no próximo sábado na praça? Vai ser um evento maravilhoso!"
+        },
+        {
+          "speaker": "Júlia",
+          "text": "Sério? Não sabia! O que vai ter por lá? Algo interessante?"
+        },
+        {
+          "speaker": "Helena",
+          "text": "Ah, vai ter de tudo! Artesanato local, comidas típicas e até música ao vivo! É uma ótima oportunidade para a gente se encontrar e curtir um pouco."
+        },
+        {
+          "speaker": "Júlia",
+          "text": "Isso parece legal! Vou tentar ir, pode ser uma boa mudança da rotina da faculdade!"
+        }
+      ],
+      "propagation_event": [
+        "Júlia"
+      ]
+    },
+    {
+      "type": "conversation",
+      "time": [
+        1,
+        10
+      ],
+      "location": "biblioteca",
+      "participants": [
+        "Roberto",
+        "Camila"
+      ],
+      "topic": "os livros que chegaram e o que ela tem lido ultimamente",
+      "turns": [
+        {
+          "speaker": "Roberto",
+          "text": "Olá, Camila. Vi que chegaram alguns livros novos na biblioteca. Algum deles chamou sua atenção?"
+        },
+        {
+          "speaker": "Camila",
+          "text": "Oi, Roberto! Sim, vi um sobre técnicas de aquarela. Estou pensando em experimentar algo novo na minha arte. E você, o que tem lido ultimamente?"
+        },
+        {
+          "speaker": "Roberto",
+          "text": "Tenho relido alguns clássicos. Gosto de revisitar as obras que me marcaram. A literatura sempre tem algo novo a oferecer, mesmo nas páginas conhecidas."
+        },
+        {
+          "speaker": "Camila",
+          "text": "Isso é verdade! Às vezes, sinto que preciso de mais histórias na minha vida. Quem sabe, um dia, eu escreva uma também!"
+        }
+      ],
+      "propagation_event": []
+    },
+    {
+      "type": "conversation",
+      "time": [
+        1,
+        11
+      ],
+      "location": "cafe",
+      "participants": [
+        "Helena",
+        "Camila"
+      ],
+      "topic": "a feira de artesanato que vai ter no próximo sábado!",
+      "turns": [
+        {
+          "speaker": "Helena",
+          "text": "Camila, você soube que vai ter uma feira de artesanato na praça no próximo sábado? Vai ser uma delícia!"
+        },
+        {
+          "speaker": "Camila",
+          "text": "Não sabia! Que legal! Vai ter muita coisa? Estou precisando de novas inspirações para minhas pinturas."
+        },
+        {
+          "speaker": "Helena",
+          "text": "Ah, com certeza! Vão ter artesãos de toda a vila. Eu ouvi que até o seu vizinho, o Joaquim, vai vender aquelas cerâmicas lindas dele!"
+        },
+        {
+          "speaker": "Camila",
+          "text": "Que ótimo! Vou passar lá, então. Espero que as pessoas sejam receptivas, ainda estou tentando me enturmar por aqui."
+        }
+      ],
+      "propagation_event": [
+        "Camila"
+      ]
+    },
+    {
+      "type": "conversation",
+      "time": [
+        1,
+        11
+      ],
+      "location": "biblioteca",
+      "participants": [
+        "Roberto",
+        "Júlia"
+      ],
+      "topic": "os livros novos que chegaram",
+      "turns": [
+        {
+          "speaker": "Roberto",
+          "text": "Olá, Júlia. Chegaram alguns livros novos na biblioteca. Você gostaria de dar uma olhada?"
+        },
+        {
+          "speaker": "Júlia",
+          "text": "Oi, Roberto! Claro, que tipo de livros são? Alguma novidade interessante?"
+        },
+        {
+          "speaker": "Roberto",
+          "text": "Temos uma coletânea de contos contemporâneos e um romance histórico que parece promissor. São bem diferentes do que costumamos ter por aqui."
+        },
+        {
+          "speaker": "Júlia",
+          "text": "Legal! Vou dar uma passada lá. Ah, e você sabia que vai ter uma feira de artesanato no próximo sábado na praça? Pode ser uma boa oportunidade para escapar da rotina!"
+        }
+      ],
+      "propagation_event": [
+        "Roberto"
+      ]
+    },
+    {
+      "type": "conversation",
+      "time": [
+        1,
+        12
+      ],
+      "location": "cafe",
+      "participants": [
+        "Helena",
+        "Camila"
+      ],
+      "topic": "a feira de artesanato e como ela pode inspirar as pinturas da Camila",
+      "turns": [
+        {
+          "speaker": "Helena",
+          "text": "Oi, Camila! Você já ouviu falar da feira de artesanato que vai ter no sábado? Estou super animada!"
+        },
+        {
+          "speaker": "Camila",
+          "text": "Oi, Helena! Sim, ouvi! Estou pensando em ir para me inspirar. Quem sabe eu encontro algo que me ajude nas minhas pinturas?"
+        },
+        {
+          "speaker": "Helena",
+          "text": "Ah, com certeza! Vai ter tanta coisa linda! E as artesãs daqui são super talentosas. Você pode até conhecer algumas que têm histórias incríveis!"
+        },
+        {
+          "speaker": "Camila",
+          "text": "Isso seria ótimo! Adoro histórias! Espero que isso me ajude a me sentir mais parte da vila também."
+        }
+      ],
+      "propagation_event": []
+    },
+    {
+      "type": "reflection",
+      "time": [
+        1,
+        13
+      ],
+      "agent": "Helena",
+      "insights": [
+        "A feira de artesanato vai ser uma ótima oportunidade para a comunidade se reunir e fortalecer os laços, além de valorizar o trabalho dos artistas locais.",
+        "Conversar sobre as novidades da vila e compartilhar informações faz com que as pessoas se sintam mais conectadas e animadas para participar dos eventos.",
+        "É importante criar um ambiente acolhedor, onde todos possam se sentir à vontade para se enturmar e trocar experiências, como a Camila que está tentando se integrar melhor."
+      ]
+    },
+    {
+      "type": "conversation",
+      "time": [
+        1,
+        14
+      ],
+      "location": "biblioteca",
+      "participants": [
+        "Helena",
+        "Roberto"
+      ],
+      "topic": "a feira de artesanato no sábado",
+      "turns": [
+        {
+          "speaker": "Helena",
+          "text": "Oi, Roberto! Você já ouviu falar da feira de artesanato que vai rolar no sábado na praça? Estou super animada!"
+        },
+        {
+          "speaker": "Roberto",
+          "text": "Sim, ouvi rumores sobre isso. Parece que vai ter bastante coisa interessante. Você vai?"
+        },
+        {
+          "speaker": "Helena",
+          "text": "Com certeza! Vou dar uma olhada nas peças e quem sabe até comprar algo. Você vai também?"
+        },
+        {
+          "speaker": "Roberto",
+          "text": "Pretendo ir. Gosto de ver o trabalho dos artesãos, é sempre inspirador. Talvez eu encontre um livro sobre artesanato."
+        }
+      ],
+      "propagation_event": []
+    },
+    {
+      "type": "reflection",
+      "time": [
+        1,
+        14
+      ],
+      "agent": "Roberto",
+      "insights": [
+        "A interação com as pessoas na biblioteca, mesmo que eu prefira os livros, enriquece minha experiência e me permite compreender melhor o que a comunidade valoriza.",
+        "A literatura tem um poder transformador, e revisitar os clássicos me ajuda a perceber que sempre há novas lições a serem aprendidas, independentemente de quantas vezes eu já tenha lido uma obra.",
+        "Participar de eventos como a feira de artesanato pode ser uma oportunidade valiosa para me conectar com a cultura local e, quem sabe, inspirar novas atividades na biblioteca."
+      ]
+    },
+    {
+      "type": "reflection",
+      "time": [
+        1,
+        14
+      ],
+      "agent": "Camila",
+      "insights": [
+        "Preciso me abrir mais para as pessoas da vila e aproveitar as oportunidades de interação, como a feira de artesanato, para me sentir mais conectada e menos como uma outsider.",
+        "A arte é um reflexo das histórias que encontramos ao nosso redor, e conhecer os artesãos e suas experiências pode me inspirar de maneiras que eu nem imagino.",
+        "Organizar meu espaço de trabalho de forma mais eficiente vai me ajudar a ser mais produtiva e a canalizar melhor minha criatividade nas minhas pinturas."
+      ]
+    },
+    {
+      "type": "reflection",
+      "time": [
+        1,
+        14
+      ],
+      "agent": "Marcos",
+      "insights": [
+        "A colaboração entre os moradores é fundamental para o sucesso dos eventos comunitários; ouvir as ideias de todos, como as da Camila, traz diversidade e engajamento.",
+        "A pesquisa sobre eventos bem-sucedidos em outras vilas me mostrou que planejamento e organização são essenciais; precisamos definir prazos e responsabilidades desde o início para evitar correria de última hora.",
+        "O contato direto com os moradores, como durante as conversas no café, é crucial para entender suas necessidades e expectativas; isso nos ajuda a criar eventos que realmente atendam à comunidade."
+      ]
+    },
+    {
+      "type": "reflection",
+      "time": [
+        1,
+        14
+      ],
+      "agent": "Júlia",
+      "insights": [
+        "A vida na vila pode ser tranquila e até um pouco parada, mas eventos como a feira de artesanato trazem uma ótima oportunidade para socializar e apreciar a cultura local.",
+        "A biblioteca é um lugar essencial para mim, não só para estudar, mas também para descobrir novas leituras e me manter atualizada nas novidades literárias.",
+        "Conversar com amigos sobre a faculdade e as novidades do cotidiano me ajuda a sentir que, mesmo vivendo em um lugar mais calmo, ainda estou conectada com o \"mundo de fora\"."
+      ]
+    },
+    {
+      "type": "conversation",
+      "time": [
+        1,
+        17
+      ],
+      "location": "praca",
+      "participants": [
+        "Marcos",
+        "Júlia"
+      ],
+      "topic": "as ideias que ela tem para o próximo evento comunitário",
+      "turns": [
+        {
+          "speaker": "Marcos",
+          "text": "Oi, Júlia! Ouvi que você tem algumas ideias para o próximo evento. O que você está pensando?"
+        },
+        {
+          "speaker": "Júlia",
+          "text": "Oi, Marcos! Sim, estava pensando em aproveitar a feira de artesanato no sábado. Poderíamos organizar uma roda de conversa sobre como valorizar o trabalho dos artesãos da vila."
+        },
+        {
+          "speaker": "Marcos",
+          "text": "Isso pode ser interessante! Mas precisamos garantir que as pessoas participem. Você acha que dá para mobilizar a galera?"
+        },
+        {
+          "speaker": "Júlia",
+          "text": "Com certeza! Posso usar as redes sociais para divulgar e até fazer um banner. Além disso, podemos oferecer um espaço para os artesãos falarem sobre suas histórias. O que acha?"
+        }
+      ],
+      "propagation_event": [
+        "Marcos"
+      ]
+    },
+    {
+      "type": "conversation",
+      "time": [
+        1,
+        18
+      ],
+      "location": "cafe",
+      "participants": [
+        "Helena",
+        "Júlia"
+      ],
+      "topic": "a feira de artesanato no sábado",
+      "turns": [
+        {
+          "speaker": "Helena",
+          "text": "Oi, Júlia! Você já ouviu falar da feira de artesanato que vai rolar no sábado? Estou super empolgada!"
+        },
+        {
+          "speaker": "Júlia",
+          "text": "Oi, Helena! Ouvi sim! Acho que vai ser uma boa oportunidade para ver algumas coisas diferentes. Você sabe se vai ter comida também?"
+        },
+        {
+          "speaker": "Helena",
+          "text": "Eu ouvi dizer que vão ter várias barracas com comidas típicas! E quem sabe eu não vou levar uns docinhos do Café Aurora para vender, hein?"
+        },
+        {
+          "speaker": "Júlia",
+          "text": "Ah, isso seria ótimo! Vou fazer um esforço para ir, quem sabe encontro algo interessante para a faculdade também!"
+        }
+      ],
+      "propagation_event": []
+    },
+    {
+      "type": "conversation",
+      "time": [
+        1,
+        19
+      ],
+      "location": "cafe",
+      "participants": [
+        "Helena",
+        "Marcos"
+      ],
+      "topic": "a feira de artesanato no sábado",
+      "turns": [
+        {
+          "speaker": "Helena",
+          "text": "Oi, Marcos! Você viu que vai ter a feira de artesanato no sábado? Estou super empolgada!"
+        },
+        {
+          "speaker": "Marcos",
+          "text": "Oi, Helena! Vi sim, estou organizando tudo. Temos que garantir que os expositores estejam bem posicionados na praça."
+        },
+        {
+          "speaker": "Helena",
+          "text": "Ah, isso é essencial! E você já conversou com a Dona Rita? Ela tem aquelas bijuterias maravilhosas que sempre fazem sucesso!"
+        },
+        {
+          "speaker": "Marcos",
+          "text": "Sim, falei com ela ontem. Ela confirmou presença e disse que vai trazer algumas novidades para atrair mais gente."
+        }
+      ],
+      "propagation_event": []
+    },
+    {
+      "type": "reflection",
+      "time": [
+        1,
+        21
+      ],
+      "agent": "Helena",
+      "insights": [
+        "A feira de artesanato é uma oportunidade incrível para a comunidade se unir e valorizar o talento local, e eu adoraria contribuir com os docinhos do Café Aurora!",
+        "Conversar com os clientes sobre as novidades da vila não só os deixa informados, mas também cria um ambiente acolhedor onde todos se sentem parte da comunidade.",
+        "A Camila, que está tentando se enturmar, é um lembrete de como é importante acolher novos membros na nossa vila e ajudar cada um a se sentir à vontade."
+      ]
+    },
+    {
+      "type": "reflection",
+      "time": [
+        2,
+        7
+      ],
+      "agent": "Roberto",
+      "insights": [
+        "A interação com os jovens na biblioteca, mesmo que eu prefira a companhia dos livros, me ensina muito sobre as necessidades e interesses da comunidade, e isso me motiva a adaptar nossas atividades e coleções.",
+        "Revisitar clássicos da literatura é uma prática enriquecedora; cada leitura traz novas perspectivas e reflexões que me ajudam a entender melhor a vida e meu papel na sociedade.",
+        "Participar de eventos locais, como a feira de artesanato, é uma oportunidade valiosa para me conectar com a cultura da vila e, quem sabe, inspirar novas iniciativas que possam enriquecer ainda mais a biblioteca."
+      ]
+    },
+    {
+      "type": "reflection",
+      "time": [
+        2,
+        7
+      ],
+      "agent": "Camila",
+      "insights": [
+        "A arte é uma poderosa conexão com as histórias e experiências das pessoas ao meu redor, e participar da feira de artesanato será uma ótima oportunidade para me inspirar e conhecer melhor a comunidade.",
+        "Organizar meu espaço de trabalho de forma mais eficiente vai facilitar minha criatividade e produtividade, permitindo que eu me concentre melhor nas minhas pinturas.",
+        "Eu preciso me abrir mais para as pessoas da vila e aproveitar as interações sociais, pois isso me ajudará a me sentir menos como uma outsider e mais parte desse lugar acolhedor."
+      ]
+    },
+    {
+      "type": "reflection",
+      "time": [
+        2,
+        7
+      ],
+      "agent": "Marcos",
+      "insights": [
+        "A colaboração entre os moradores é essencial; quanto mais ouvirmos e incorporarmos as ideias de todos, mais engajados eles estarão no evento.",
+        "O planejamento detalhado é fundamental; definir prazos e responsabilidades desde o início evita estresses e correria de última hora.",
+        "O contato direto com os moradores é crucial para entender suas necessidades; essas conversas informais ajudam a moldar eventos que realmente ressoem com a comunidade."
+      ]
+    },
+    {
+      "type": "reflection",
+      "time": [
+        2,
+        7
+      ],
+      "agent": "Júlia",
+      "insights": [
+        "A vida na vila pode ser tranquila, mas eventos como a feira de artesanato me lembram da importância de conectar a comunidade e valorizar o que temos aqui.",
+        "Estudar na biblioteca não é apenas uma obrigação, mas uma oportunidade de descobrir novas leituras e me manter atualizada, o que faz toda a diferença na minha vida acadêmica.",
+        "Manter contato com amigos e compartilhar experiências da faculdade é fundamental para me sentir conectada ao \"mundo de fora\", mesmo vivendo em um lugar mais calmo."
+      ]
+    },
+    {
+      "type": "conversation",
+      "time": [
+        2,
+        9
+      ],
+      "location": "praca",
+      "participants": [
+        "Camila",
+        "Marcos"
+      ],
+      "topic": "a feira de artesanato que vai ter no próximo sábado",
+      "turns": [
+        {
+          "speaker": "Camila",
+          "text": "Oi, Marcos! Você ouviu falar da feira de artesanato que vai ter no sábado? Estou pensando em participar."
+        },
+        {
+          "speaker": "Marcos",
+          "text": "Oi, Camila! Sim, estou organizando tudo. Vai ser uma ótima oportunidade para os artistas da vila. Você já tem algo em mente?"
+        },
+        {
+          "speaker": "Camila",
+          "text": "Pensei em expor algumas telas que fiz aqui. Quero capturar a essência da vila, mas ainda estou tentando encontrar o estilo certo."
+        },
+        {
+          "speaker": "Marcos",
+          "text": "Isso é ótimo! A vila precisa de mais arte. Se você precisar de ajuda para montar o seu espaço, pode contar comigo."
+        }
+      ],
+      "propagation_event": []
+    },
+    {
+      "type": "conversation",
+      "time": [
+        2,
+        9
+      ],
+      "location": "biblioteca",
+      "participants": [
+        "Roberto",
+        "Júlia"
+      ],
+      "topic": "a feira de artesanato no próximo sábado",
+      "turns": [
+        {
+          "speaker": "Roberto",
+          "text": "Você soube que vai ter uma feira de artesanato na praça no próximo sábado?"
+        },
+        {
+          "speaker": "Júlia",
+          "text": "Sim, fiquei sabendo! Estou pensando em ir. Ouvi que vai ter coisas bem interessantes por lá."
+        },
+        {
+          "speaker": "Roberto",
+          "text": "É uma boa oportunidade para conhecer o trabalho dos artesãos da vila. Eles fazem coisas muito bonitas."
+        },
+        {
+          "speaker": "Júlia",
+          "text": "Verdade! E pode ser uma chance de encontrar algo único. Quem sabe até um presente para meus pais!"
+        }
+      ],
+      "propagation_event": []
+    },
+    {
+      "type": "conversation",
+      "time": [
+        2,
+        10
+      ],
+      "location": "casa_julia",
+      "participants": [
+        "Camila",
+        "Marcos"
+      ],
+      "topic": "a feira de artesanato e como posso me preparar melhor para expor minhas telas",
+      "turns": [
+        {
+          "speaker": "Camila",
+          "text": "Oi, Marcos! Eu soube que vai ter uma feira de artesanato no sábado. Estou pensando em expor minhas telas, mas não sei por onde começar."
+        },
+        {
+          "speaker": "Marcos",
+          "text": "Oi, Camila! Que legal que você quer participar! É uma ótima oportunidade para mostrar seu trabalho. Você já pensou em como vai montar seu estande?"
+        },
+        {
+          "speaker": "Camila",
+          "text": "Ah, eu ainda estou meio perdida quanto a isso. Queria algo bonito, mas não sei se tenho tudo o que preciso. Você poderia me dar algumas dicas?"
+        },
+        {
+          "speaker": "Marcos",
+          "text": "Claro! Tente pensar em uma apresentação que destaque suas obras. Use uma boa iluminação e tenha cartões de visita. E não esqueça de contar um pouco sobre você e seu processo criativo!"
+        }
+      ],
+      "propagation_event": []
+    },
+    {
+      "type": "conversation",
+      "time": [
+        2,
+        11
+      ],
+      "location": "praca",
+      "participants": [
+        "Roberto",
+        "Júlia"
+      ],
+      "topic": "a feira de artesanato e o que ela pretende comprar para seus pais",
+      "turns": [
+        {
+          "speaker": "Roberto",
+          "text": "Olá, Júlia. Você soube da feira de artesanato que vai ter no sábado?"
+        },
+        {
+          "speaker": "Júlia",
+          "text": "Oi, Roberto! Sim, estou pensando em ir. Quero comprar algo especial para meus pais."
+        },
+        {
+          "speaker": "Roberto",
+          "text": "Que ótima ideia! O que você pretende comprar para eles?"
+        },
+        {
+          "speaker": "Júlia",
+          "text": "Estou pensando em uma peça de cerâmica ou talvez um quadro. Algo que traga um pouco da arte local para casa."
+        }
+      ],
+      "propagation_event": []
+    },
+    {
+      "type": "conversation",
+      "time": [
+        2,
+        12
+      ],
+      "location": "cafe",
+      "participants": [
+        "Helena",
+        "Camila"
+      ],
+      "topic": "a feira de artesanato no próximo sábado! Você já está pensando em ir?",
+      "turns": [
+        {
+          "speaker": "Helena",
+          "text": "Oi, Camila! Você já ouviu falar da feira de artesanato que vai ter no próximo sábado na praça? Estou tão animada!"
+        },
+        {
+          "speaker": "Camila",
+          "text": "Oi, Helena! Ouvi sim! Estou pensando em ir. Pode ser uma ótima oportunidade para eu encontrar algumas coisas que me inspirem."
+        },
+        {
+          "speaker": "Helena",
+          "text": "Com certeza! E vai ter um monte de artesãos locais. Eu estou curiosa para ver o que o Zé vai trazer, ele sempre faz aquelas peças incríveis!"
+        },
+        {
+          "speaker": "Camila",
+          "text": "Ah, eu ainda não conheço o Zé, mas estou ansiosa para conhecer o trabalho dele. Talvez eu consiga expor alguma coisa minha também, quem sabe?"
+        }
+      ],
+      "propagation_event": []
+    },
+    {
+      "type": "reflection",
+      "time": [
+        2,
+        14
+      ],
+      "agent": "Helena",
+      "insights": [
+        "A feira de artesanato é uma oportunidade maravilhosa para fortalecer os laços da comunidade e valorizar o talento local, e eu me sinto tão animada em fazer parte disso com os docinhos do Café Aurora!",
+        "Conversar com os clientes não só me mantém informada sobre as novidades da vila, mas também cria um ambiente acolhedor que faz com que todos se sintam em casa, como uma grande família.",
+        "É fundamental acolher novos membros, como a Camila, e ajudá-los a se enturmar, porque cada pessoa traz algo único para nossa comunidade e isso enriquece ainda mais o nosso convívio."
+      ]
+    },
+    {
+      "type": "conversation",
+      "time": [
+        2,
+        15
+      ],
+      "location": "biblioteca",
+      "participants": [
+        "Roberto",
+        "Camila"
+      ],
+      "topic": "a feira de artesanato",
+      "turns": [
+        {
+          "speaker": "Roberto",
+          "text": "Ouvi dizer que vai ter uma feira de artesanato na praça no próximo sábado. Você pretende ir?"
+        },
+        {
+          "speaker": "Camila",
+          "text": "Sim, estou animada! Acho que pode ser uma boa oportunidade para conhecer mais sobre a arte local. Você vai também?"
+        },
+        {
+          "speaker": "Roberto",
+          "text": "Talvez. Gosto de observar, mas não sou muito de participar. A atmosfera da feira pode ser interessante, porém."
+        },
+        {
+          "speaker": "Camila",
+          "text": "Entendo! Às vezes, só de estar em um lugar assim já traz inspiração, não é? Quem sabe você não encontra algo que desperte seu interesse?"
+        }
+      ],
+      "propagation_event": []
+    },
+    {
+      "type": "reflection",
+      "time": [
+        2,
+        15
+      ],
+      "agent": "Roberto",
+      "insights": [
+        "A interação com os jovens na biblioteca, apesar de minha preferência por livros, é fundamental para entender as necessidades da comunidade e adaptar nossas atividades de acordo.",
+        "Revisitar clássicos da literatura não apenas enriquece minha própria vida, mas também me proporciona novas maneiras de conectar os leitores com suas experiências e reflexões.",
+        "Participar de eventos locais, como a feira de artesanato, me lembra da importância de estar presente na cultura da vila, mesmo que eu prefira a companhia silenciosa dos livros."
+      ]
+    },
+    {
+      "type": "reflection",
+      "time": [
+        2,
+        15
+      ],
+      "agent": "Camila",
+      "insights": [
+        "Participar da feira de artesanato é uma oportunidade incrível não só para expor meu trabalho, mas também para me conectar com a comunidade e entender melhor suas histórias e inspirações.",
+        "Organizar meu espaço de trabalho de forma eficiente realmente faz diferença na minha criatividade; quando estou cercada de um ambiente organizado, consigo me concentrar melhor e fluir nas minhas pinturas.",
+        "Precisar me abrir mais para as pessoas da vila é essencial; cada interação me ajuda a me sentir menos como uma outsider e mais parte desse lugar acolhedor, onde a arte e as experiências se entrelaçam."
+      ]
+    },
+    {
+      "type": "reflection",
+      "time": [
+        2,
+        15
+      ],
+      "agent": "Marcos",
+      "insights": [
+        "A colaboração entre os moradores é essencial para o sucesso da feira; quanto mais ouvirmos e incorporarmos as ideias de todos, mais engajados eles estarão no evento.",
+        "O planejamento detalhado é fundamental; definir prazos e responsabilidades desde o início evita estresses e correria de última hora, garantindo que tudo ocorra conforme o esperado.",
+        "O contato direto com os moradores, através de conversas informais, ajuda a entender suas necessidades e moldar eventos que realmente ressoem com a comunidade, tornando-os mais significativos."
+      ]
+    },
+    {
+      "type": "reflection",
+      "time": [
+        2,
+        15
+      ],
+      "agent": "Júlia",
+      "insights": [
+        "A feira de artesanato é uma ótima oportunidade para valorizar o que temos na vila e conectar a comunidade com a arte local.",
+        "Estudar na biblioteca não é apenas uma obrigação, mas uma chance de me manter atualizada e descobrir novas ideias que podem enriquecer minha vida acadêmica.",
+        "Manter contato com meus amigos e compartilhar experiências faz com que eu me sinta mais próxima do \"mundo de fora\", mesmo vivendo em um lugar mais tranquilo."
+      ]
+    },
+    {
+      "type": "conversation",
+      "time": [
+        2,
+        16
+      ],
+      "location": "praca",
+      "participants": [
+        "Camila",
+        "Marcos"
+      ],
+      "topic": "a feira de artesanato",
+      "turns": [
+        {
+          "speaker": "Camila",
+          "text": "Oi, Marcos! Eu ouvi que vai ter uma feira de artesanato no próximo sábado. Você está organizando, né?"
+        },
+        {
+          "speaker": "Marcos",
+          "text": "Oi, Camila! Sim, estou ajudando a organizar. Vai ser uma ótima oportunidade para mostrar o trabalho dos artesãos da vila."
+        },
+        {
+          "speaker": "Camila",
+          "text": "Que legal! Eu adoraria participar e expor algumas das minhas pinturas. Você acha que ainda dá tempo de me inscrever?"
+        },
+        {
+          "speaker": "Marcos",
+          "text": "Claro, dá sim! Vou precisar de seu nome e o tipo de arte que você vai trazer. Vamos fazer dessa feira um sucesso!"
+        }
+      ],
+      "propagation_event": []
+    },
+    {
+      "type": "conversation",
+      "time": [
+        2,
+        20
+      ],
+      "location": "casa_roberto",
+      "participants": [
+        "Roberto",
+        "Camila"
+      ],
+      "topic": "a feira de artesanato",
+      "turns": [
+        {
+          "speaker": "Roberto",
+          "text": "Olá, Camila. Ouvi dizer que vai ter uma feira de artesanato na praça sábado. Você pretende participar?"
+        },
+        {
+          "speaker": "Camila",
+          "text": "Oi, Roberto! Sim, estou pensando em expor algumas das minhas pinturas. Quero ver se consigo vender algo e, quem sabe, encontrar novos amigos por aqui."
+        },
+        {
+          "speaker": "Roberto",
+          "text": "Isso parece uma ótima oportunidade. A feira costuma atrair bastante gente, e a arte sempre traz boas conversas."
+        },
+        {
+          "speaker": "Camila",
+          "text": "Verdade! Estou ansiosa, mas ao mesmo tempo um pouco nervosa. Espero que as pessoas gostem do meu trabalho. Você vai passar por lá?"
+        }
+      ],
+      "propagation_event": []
+    },
+    {
+      "type": "reflection",
+      "time": [
+        3,
+        7
+      ],
+      "agent": "Helena",
+      "insights": [
+        "A conexão com os clientes é fundamental; cada conversa me ensina algo novo e fortalece nossos laços na comunidade.",
+        "A feira de artesanato é uma ótima oportunidade para mostrar o talento local e unir as pessoas, e eu adoro fazer parte disso com os meus docinhos!",
+        "Acolher novos membros, como a Camila, é essencial para enriquecer nossa vila; cada pessoa traz algo único e especial que valoriza ainda mais nosso convívio."
+      ]
+    },
+    {
+      "type": "reflection",
+      "time": [
+        3,
+        8
+      ],
+      "agent": "Roberto",
+      "insights": [
+        "A interação com os jovens e a comunidade é essencial para que eu possa entender suas necessidades e adaptar as atividades da biblioteca, mesmo que eu prefira a companhia silenciosa dos livros.",
+        "Participar de eventos locais, como a feira de artesanato, me lembra da importância de estar presente na cultura da vila e de como isso pode enriquecer minha própria perspectiva sobre a arte e a vida cotidiana.",
+        "Revisitar clássicos da literatura não apenas enriquece minha própria vida, mas também me proporciona novas maneiras de conectar os leitores com suas experiências e reflexões, mostrando que os livros podem ser um ponto de encontro valioso."
+      ]
+    },
+    {
+      "type": "reflection",
+      "time": [
+        3,
+        8
+      ],
+      "agent": "Camila",
+      "insights": [
+        "Participar da feira de artesanato é uma oportunidade incrível para me conectar com a comunidade e mostrar meu trabalho, o que pode me ajudar a me sentir menos como uma outsider.",
+        "Organizar meu espaço de trabalho de forma eficiente realmente faz diferença na minha criatividade; quando estou em um ambiente mais organizado, consigo fluir melhor nas minhas pinturas.",
+        "Preciso me abrir mais para as pessoas da vila; cada interação é uma chance de construir relacionamentos e entender melhor as histórias que cercam esse lugar tão inspirador."
+      ]
+    },
+    {
+      "type": "reflection",
+      "time": [
+        3,
+        8
+      ],
+      "agent": "Marcos",
+      "insights": [
+        "A colaboração entre os moradores é fundamental; quando todos se envolvem e compartilham suas ideias, o evento se torna mais significativo e engajador para a comunidade.",
+        "O planejamento detalhado é essencial para evitar estresses de última hora; definir prazos e responsabilidades desde o início garante que tudo ocorra conforme o esperado.",
+        "O contato direto com os moradores, por meio de conversas informais, me ajuda a entender suas necessidades e a moldar eventos que realmente ressoem com a comunidade."
+      ]
+    },
+    {
+      "type": "reflection",
+      "time": [
+        3,
+        8
+      ],
+      "agent": "Júlia",
+      "insights": [
+        "A vida na vila pode parecer parada, mas sempre há oportunidades para valorizar a arte local e conectar a comunidade, como a feira de artesanato.",
+        "Estudar na biblioteca não é apenas uma obrigação, mas uma forma de me manter atualizada e inspirada, trazendo novas ideias para minha vida acadêmica.",
+        "Manter contato com amigos e compartilhar experiências me ajuda a sentir que estou conectada com o \"mundo de fora\", mesmo vivendo em um lugar tranquilo."
+      ]
+    },
+    {
+      "type": "conversation",
+      "time": [
+        3,
+        9
+      ],
+      "location": "biblioteca",
+      "participants": [
+        "Marcos",
+        "Júlia"
+      ],
+      "topic": "a feira de artesanato e como podemos engajar mais moradores para participarem",
+      "turns": [
+        {
+          "speaker": "Marcos",
+          "text": "Júlia, você já ouviu falar da feira de artesanato que vai rolar no sábado? Precisamos de mais moradores para participar."
+        },
+        {
+          "speaker": "Júlia",
+          "text": "Sim, eu vi! Mas, sinceramente, acho que muitos ainda não estão tão animados. O que você acha de fazer uma campanha nas redes sociais?"
+        },
+        {
+          "speaker": "Marcos",
+          "text": "Boa ideia! Podemos criar um evento no Facebook e convidar as pessoas. Além disso, gostaria de ver se conseguimos algumas barracas extras para os artesãos locais."
+        },
+        {
+          "speaker": "Júlia",
+          "text": "Exatamente! E que tal um concurso de melhor peça artesanal? Isso poderia dar um incentivo a mais e atrair mais visitantes!"
+        }
+      ],
+      "propagation_event": []
+    },
+    {
+      "type": "conversation",
+      "time": [
+        3,
+        10
+      ],
+      "location": "praca",
+      "participants": [
+        "Camila",
+        "Marcos"
+      ],
+      "topic": "a feira de artesanato e como ele acha que posso me preparar para participar",
+      "turns": [
+        {
+          "speaker": "Camila",
+          "text": "Oi, Marcos! Ouvi dizer que vai ter uma feira de artesanato no sábado. Você acha que eu deveria participar?"
+        },
+        {
+          "speaker": "Marcos",
+          "text": "Oi, Camila! Com certeza! Seria uma ótima oportunidade para você mostrar seu trabalho e se enturmar. Tem alguma coisa já pronta?"
+        },
+        {
+          "speaker": "Camila",
+          "text": "Estou trabalhando em algumas peças, mas ainda não estou certa se estão boas o suficiente. Como você acha que eu posso me preparar?"
+        },
+        {
+          "speaker": "Marcos",
+          "text": "Pense em levar uma variedade de peças e, se puder, faça um cartaz com seu nome e uma breve descrição do seu trabalho. Isso ajuda a chamar a atenção!"
+        }
+      ],
+      "propagation_event": []
+    },
+    {
+      "type": "conversation",
+      "time": [
+        3,
+        11
+      ],
+      "location": "cafe",
+      "participants": [
+        "Helena",
+        "Camila"
+      ],
+      "topic": "a feira de artesanato que vai ter no próximo sábado!",
+      "turns": [
+        {
+          "speaker": "Helena",
+          "text": "Camila, você já ouviu falar da feira de artesanato que vai rolar sábado na praça? Estou tão animada!"
+        },
+        {
+          "speaker": "Camila",
+          "text": "Ouvi, sim! Estou pensando em participar com algumas das minhas pinturas. Você acha que as pessoas vão gostar?"
+        },
+        {
+          "speaker": "Helena",
+          "text": "Com certeza! O pessoal adora arte! E você vai conhecer um monte de gente nova. Vai ser uma ótima oportunidade para se enturmar!"
+        },
+        {
+          "speaker": "Camila",
+          "text": "Verdade! Estou um pouco nervosa, mas quero muito mostrar meu trabalho. Você vai estar por lá, né?"
+        }
+      ],
+      "propagation_event": []
+    },
+    {
+      "type": "conversation",
+      "time": [
+        3,
+        11
+      ],
+      "location": "biblioteca",
+      "participants": [
+        "Júlia",
+        "Roberto"
+      ],
+      "topic": "a feira de artesanato e como podemos engajar mais moradores para participarem",
+      "turns": [
+        {
+          "speaker": "Júlia",
+          "text": "Oi, Roberto! Você já ouviu falar da feira de artesanato que vai rolar no sábado?"
+        },
+        {
+          "speaker": "Roberto",
+          "text": "Sim, ouvi. É uma ótima iniciativa, mas parece que a participação dos moradores é sempre a mesma."
+        },
+        {
+          "speaker": "Júlia",
+          "text": "Verdade! Eu estava pensando em como poderíamos engajar mais gente. Talvez se fizermos uma divulgação nas redes sociais?"
+        },
+        {
+          "speaker": "Roberto",
+          "text": "Isso pode ajudar, mas quem sabe uma conversa informal na praça antes da feira? Assim, podemos despertar o interesse deles."
+        }
+      ],
+      "propagation_event": []
+    },
+    {
+      "type": "conversation",
+      "time": [
+        3,
+        12
+      ],
+      "location": "cafe",
+      "participants": [
+        "Helena",
+        "Marcos"
+      ],
+      "topic": "a feira de artesanato",
+      "turns": [
+        {
+          "speaker": "Helena",
+          "text": "Marcos, você viu que vai ter a feira de artesanato no próximo sábado? Estou tão animada!"
+        },
+        {
+          "speaker": "Marcos",
+          "text": "Vi sim, Helena! Estou organizando as barracas e os stands. Vai ser um evento e tanto."
+        },
+        {
+          "speaker": "Helena",
+          "text": "Ah, eu já estou pensando em quais delícias vou servir no café! E você sabe quem mais vai expor?"
+        },
+        {
+          "speaker": "Marcos",
+          "text": "Sim, a maioria dos artesãos da vila confirmou. E precisamos garantir que tudo esteja em ordem para receber o pessoal!"
+        }
+      ],
+      "propagation_event": []
+    },
+    {
+      "type": "conversation",
+      "time": [
+        3,
+        13
+      ],
+      "location": "praca",
+      "participants": [
+        "Júlia",
+        "Roberto"
+      ],
+      "topic": "a feira de artesanato e como podemos engajar mais moradores para participarem",
+      "turns": [
+        {
+          "speaker": "Júlia",
+          "text": "Oi, Roberto! Você soube que vai ter uma feira de artesanato na praça no sábado?"
+        },
+        {
+          "speaker": "Roberto",
+          "text": "Sim, ouvi falar. Mas tenho a impressão de que poucos moradores estão envolvidos."
+        },
+        {
+          "speaker": "Júlia",
+          "text": "Pois é, acho que a gente podia fazer algo para engajar mais gente. Que tal uma divulgação nas redes sociais da vila?"
+        },
+        {
+          "speaker": "Roberto",
+          "text": "Uma boa ideia, Júlia. Talvez um cartaz na biblioteca também ajude a chamar a atenção dos que não estão online."
+        }
+      ],
+      "propagation_event": []
+    },
+    {
+      "type": "conversation",
+      "time": [
+        3,
+        14
+      ],
+      "location": "casa_camila",
+      "participants": [
+        "Camila",
+        "Marcos"
+      ],
+      "topic": "a feira de artesanato e como ele se sente em relação a ela",
+      "turns": [
+        {
+          "speaker": "Camila",
+          "text": "Oi, Marcos! Eu ouvi que vai ter uma feira de artesanato no próximo sábado. Estou animada para ver o que o pessoal vai trazer!"
+        },
+        {
+          "speaker": "Marcos",
+          "text": "Oi, Camila! Sim, a feira promete ser ótima. Vamos ter várias barracas com produtos locais. É uma boa oportunidade para fortalecer a comunidade."
+        },
+        {
+          "speaker": "Camila",
+          "text": "Que legal! Eu adoraria participar e mostrar algumas das minhas pinturas. Você acha que ainda dá tempo de me inscrever?"
+        },
+        {
+          "speaker": "Marcos",
+          "text": "Com certeza! Só me avise até amanhã para eu organizar direitinho. E não se esqueça de trazer suas peças bem visíveis; as pessoas adoram novidades."
+        }
+      ],
+      "propagation_event": []
+    },
+    {
+      "type": "conversation",
+      "time": [
+        3,
+        15
+      ],
+      "location": "cafe",
+      "participants": [
+        "Helena",
+        "Roberto"
+      ],
+      "topic": "a feira de artesanato",
+      "turns": [
+        {
+          "speaker": "Helena",
+          "text": "Roberto, você soube que vai ter uma feira de artesanato na praça no sábado? Estou super animada!"
+        },
+        {
+          "speaker": "Roberto",
+          "text": "Sim, eu ouvi. Parece que vai ter bastante coisa interessante. Artesanato sempre tem seu charme, não é?"
+        },
+        {
+          "speaker": "Helena",
+          "text": "Com certeza! Vou até levar uns biscoitinhos do Café Aurora para oferecer. A gente precisa atrair mais gente para a vila, né?"
+        },
+        {
+          "speaker": "Roberto",
+          "text": "Boa ideia, Helena. E quem sabe isso não incentiva mais pessoas a lerem sobre o artesanato na biblioteca? Poderíamos até organizar uma pequena exposição."
+        }
+      ],
+      "propagation_event": []
+    },
+    {
+      "type": "reflection",
+      "time": [
+        3,
+        15
+      ],
+      "agent": "Helena",
+      "insights": [
+        "A conexão com os clientes é fundamental; cada conversa que tenho me ensina algo novo e fortalece nossos laços na comunidade, tornando o Café Aurora um verdadeiro ponto de encontro.",
+        "A feira de artesanato é uma oportunidade incrível para unir as pessoas da vila e valorizar o talento local; é sempre gratificante ver novos rostos participando e se envolvendo.",
+        "Acolher novos membros, como a Camila, enriquece nosso convívio; cada pessoa traz uma energia e uma história únicas que fazem nossa comunidade ainda mais especial."
+      ]
+    },
+    {
+      "type": "conversation",
+      "time": [
+        3,
+        16
+      ],
+      "location": "praca",
+      "participants": [
+        "Marcos",
+        "Helena"
+      ],
+      "topic": "a feira de artesanato e como podemos garantir que tudo esteja pronto para sábado",
+      "turns": [
+        {
+          "speaker": "Marcos",
+          "text": "Helena, precisamos garantir que a feira de artesanato esteja tudo certo para sábado. Você já conversou com os expositores?"
+        },
+        {
+          "speaker": "Helena",
+          "text": "Ah, claro! A maioria está animada, mas ouvi que o João ainda não decidiu se vai participar. Ele sempre traz aquelas peças incríveis!"
+        },
+        {
+          "speaker": "Marcos",
+          "text": "Vamos precisar que ele confirme logo. Se ele não for, podemos ficar com um espaço vazio. Você pode dar uma passada no café e tentar convencê-lo?"
+        },
+        {
+          "speaker": "Helena",
+          "text": "Pode deixar, vou fazer um café bem quentinho e puxar um papo com ele. E se precisar de ajuda com a decoração da praça, estou à disposição!"
+        }
+      ],
+      "propagation_event": []
+    },
+    {
+      "type": "reflection",
+      "time": [
+        3,
+        16
+      ],
+      "agent": "Roberto",
+      "insights": [
+        "A interação com a comunidade, mesmo que eu prefira a companhia dos livros, é vital para entender as necessidades dos moradores e enriquecer a biblioteca com suas vozes e histórias.",
+        "Participar de eventos locais, como a feira de artesanato, não apenas promove a cultura da vila, mas também me oferece novas perspectivas sobre arte e vida, ampliando meus horizontes.",
+        "A colaboração com pessoas como Júlia e Helena mostra que, juntos, podemos criar iniciativas que não apenas engajam mais moradores, mas também conectam a literatura ao cotidiano, despertando o interesse pela leitura e pelo conhecimento."
+      ]
+    },
+    {
+      "type": "reflection",
+      "time": [
+        3,
+        16
+      ],
+      "agent": "Camila",
+      "insights": [
+        "Participar da feira de artesanato é uma oportunidade valiosa não apenas para mostrar meu trabalho, mas também para me conectar com a comunidade e me sentir menos como uma outsider.",
+        "Organizar meu espaço de trabalho de forma eficiente realmente faz diferença na minha criatividade; quando estou em um ambiente mais arrumado, consigo fluir melhor nas minhas pinturas.",
+        "A interação com os vizinhos e outros artistas é fundamental; cada conversa é uma chance de construir relacionamentos e entender melhor as histórias que cercam essa vila tão inspiradora."
+      ]
+    },
+    {
+      "type": "reflection",
+      "time": [
+        3,
+        16
+      ],
+      "agent": "Marcos",
+      "insights": [
+        "A colaboração entre os moradores é essencial; quando todos se envolvem, conseguimos criar eventos que realmente refletem o espírito da nossa comunidade e atraem mais participação.",
+        "O planejamento detalhado é fundamental para evitar imprevistos; ao definir prazos e responsabilidades desde o início, conseguimos garantir que tudo ocorra conforme o esperado e que os moradores se sintam seguros em participar.",
+        "O contato direto com os moradores, por meio de conversas informais, me ajuda a entender suas necessidades e desejos, permitindo que eu molde eventos que realmente ressoem com a comunidade e incentivem a participação ativa."
+      ]
+    },
+    {
+      "type": "reflection",
+      "time": [
+        3,
+        16
+      ],
+      "agent": "Júlia",
+      "insights": [
+        "A vida na vila pode parecer parada, mas sempre há maneiras de valorizar a comunidade e engajar os moradores, especialmente através de eventos como a feira de artesanato.",
+        "Manter contato com amigos e compartilhar experiências é essencial para me sentir conectada com o mundo, mesmo vivendo em um lugar mais tranquilo.",
+        "A combinação de redes sociais e interações presenciais, como conversas informais, pode ser uma estratégia poderosa para mobilizar mais pessoas e criar um senso de comunidade."
+      ]
+    },
+    {
+      "type": "conversation",
+      "time": [
+        3,
+        17
+      ],
+      "location": "cafe",
+      "participants": [
+        "Helena",
+        "Júlia"
+      ],
+      "topic": "a feira de artesanato e como podemos animar o pessoal para participar! Você já ouviu algo do João?",
+      "turns": [
+        {
+          "speaker": "Helena",
+          "text": "Oi, Júlia! Você já ouviu falar da feira de artesanato que vai rolar sábado na praça? Tô pensando em como podemos animar o pessoal pra participar!"
+        },
+        {
+          "speaker": "Júlia",
+          "text": "Oi, Helena! Ouvi sim! Seria legal fazer algo diferente, tipo uma competição de quem vende mais. O que você acha?"
+        },
+        {
+          "speaker": "Helena",
+          "text": "Adorei a ideia! E se a gente também tivesse música ao vivo? O João toca violão, você sabe se ele vai participar?"
+        },
+        {
+          "speaker": "Júlia",
+          "text": "Boa, música sempre anima! Vou perguntar pra ele, mas acho que ele tá meio ocupado com os estudos. Vamos dar um jeito de convencê-lo!"
+        }
+      ],
+      "propagation_event": []
+    },
+    {
+      "type": "conversation",
+      "time": [
+        3,
+        19
+      ],
+      "location": "cafe",
+      "participants": [
+        "Helena",
+        "Marcos"
+      ],
+      "topic": "a confirmação do João para a feira de artesanato",
+      "turns": [
+        {
+          "speaker": "Helena",
+          "text": "Oi, Marcos! Você soube que o João confirmou presença para a feira de artesanato no sábado? Estou tão animada!"
+        },
+        {
+          "speaker": "Marcos",
+          "text": "Oi, Helena! Sim, fiquei sabendo. Ele sempre traz coisas incríveis. Você já decidiu o que vai levar para vender?"
+        },
+        {
+          "speaker": "Helena",
+          "text": "Ah, estou pensando em levar alguns bolos e talvez umas lembrancinhas que eu fiz. E você, vai organizar algo especial para o evento?"
+        },
+        {
+          "speaker": "Marcos",
+          "text": "Estou planejando uma apresentação musical no início da feira. Vai ser uma boa atração para animar o pessoal. Precisamos garantir que tudo corra bem!"
+        }
+      ],
+      "propagation_event": []
+    }
+  ],
+  "propagation": {
+    "seed_info": "Vai ter uma feira de artesanato no próximo sábado na praça",
+    "informed_agents": {
+      "Helena": [
+        1,
+        7
+      ],
+      "Júlia": [
+        1,
+        10
+      ],
+      "Camila": [
+        1,
+        11
+      ],
+      "Roberto": [
+        1,
+        11
+      ],
+      "Marcos": [
+        1,
+        17
+      ]
+    },
+    "timeline": [
+      {
+        "agent": "Helena",
+        "time": [
+          1,
+          7
+        ]
+      },
+      {
+        "agent": "Júlia",
+        "time": [
+          1,
+          10
+        ]
+      },
+      {
+        "agent": "Camila",
+        "time": [
+          1,
+          11
+        ]
+      },
+      {
+        "agent": "Roberto",
+        "time": [
+          1,
+          11
+        ]
+      },
+      {
+        "agent": "Marcos",
+        "time": [
+          1,
+          17
+        ]
+      }
+    ],
+    "rate": 1.0
+  }
+}
