@@ -1,0 +1,81 @@
+{
+  "mode": "llm",
+  "consistency": {
+    "Helena": {
+      "own": 0.389,
+      "cross": 0.3114,
+      "delta": 0.0776
+    },
+    "Roberto": {
+      "own": 0.3333,
+      "cross": 0.2758,
+      "delta": 0.0575
+    },
+    "Camila": {
+      "own": 0.3614,
+      "cross": 0.334,
+      "delta": 0.0274
+    },
+    "Marcos": {
+      "own": 0.3561,
+      "cross": 0.3045,
+      "delta": 0.0516
+    },
+    "Júlia": {
+      "own": 0.3417,
+      "cross": 0.3058,
+      "delta": 0.0359
+    }
+  },
+  "propagation": {
+    "seed_info": "Vai ter uma feira de artesanato no próximo sábado na praça",
+    "seed_agent": "Helena",
+    "timeline": [
+      {
+        "agent": "Helena",
+        "day": 1,
+        "hour": 7,
+        "source": "initial"
+      },
+      {
+        "agent": "Júlia",
+        "day": 1,
+        "hour": 10,
+        "source": "Helena"
+      },
+      {
+        "agent": "Camila",
+        "day": 1,
+        "hour": 11,
+        "source": "Helena"
+      },
+      {
+        "agent": "Roberto",
+        "day": 1,
+        "hour": 11,
+        "source": "Júlia"
+      },
+      {
+        "agent": "Marcos",
+        "day": 1,
+        "hour": 17,
+        "source": "Júlia"
+      }
+    ],
+    "propagation_rate": 1.0,
+    "total_agents": 5,
+    "informed_agents": 5,
+    "total_days": 3
+  },
+  "simulation_stats": {
+    "total_days": 3,
+    "total_conversations": 29,
+    "total_reflections": 25,
+    "total_observations": 226
+  },
+  "consistency_method": {
+    "embedding_model": "text-embedding-3-small",
+    "measure": "cosine(bio, ação) — média sobre falas e reflexões do agente",
+    "interpretation": "Comparação relativa: 'own' = similaridade com a própria persona; 'cross' = média de similaridade com as personas dos outros agentes. own > cross indica que a persona se mantém distinguível e consistente."
+  }
+}
