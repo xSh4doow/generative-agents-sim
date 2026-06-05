@@ -10,6 +10,7 @@ Uso:
 
 from __future__ import annotations
 
+import os
 import re
 import subprocess
 import sys
@@ -36,10 +37,11 @@ YELLOW = (230, 200, 110)
 BLUE = (110, 170, 235)
 MAGENTA = (200, 150, 230)
 TITLE_BG = (32, 33, 40)
+TITLE = "simulação social"
 
 
 EMOJI_MAP = {
-    "🏘️": ">", "🏘": ">", "📊": "##", "✅": "✓", "⚠️": "!", "⚠": "!",
+    "🏘️": ">", "🏘": ">", "📊": "##", "✅": "✓", "⚠️": " ", "⚠": " ",
     "❌": "x", "🎬": ">", "️": "",
 }
 
@@ -72,50 +74,69 @@ def color_for(line: str) -> tuple:
     return FG
 
 
-def run_and_capture() -> list[str]:
-    print("Rodando simulação mock para capturar saída...")
+def run_and_capture(mode: str = "mock") -> list[str]:
+    print(f"Rodando simulação {mode} para capturar saída...")
     proc = subprocess.run(
-        [sys.executable, "main.py", "--mode", "mock", "--verbose"],
+        [sys.executable, "main.py", "--mode", mode, "--verbose"],
         capture_output=True, text=True,
     )
     raw = proc.stdout.splitlines()
     return curate(raw)
 
 
+def read_log(path: str) -> list[str]:
+    print(f"Lendo saída já capturada de {path} ...")
+    with open(path, encoding="utf-8") as f:
+        raw = f.read().splitlines()
+    return curate(raw)
+
+
 def curate(lines: list[str]) -> list[str]:
-    """Seleciona uma narrativa enxuta: setup, alguns dias/conversas com
-    propagação, uma reflexão, e o bloco de avaliação final."""
+    """Seleciona uma narrativa enxuta: setup, conversas com propagação (com o
+    header da hora só quando há ação), uma reflexão, e a avaliação final.
+
+    Ignora os headers de hora vazios (ex.: '=== Dia 3, 18h ===' sem nada),
+    que só inflam e poluem o GIF."""
     out: list[str] = []
     convs_kept = 0
+    refls_kept = 0
     in_eval = False
+    pending_header = None  # header de hora ainda não emitido
+    last_emitted_header = None
     i = 0
     while i < len(lines):
         ln = lines[i]
         if "AVALIAÇÃO" in ln or in_eval:
             in_eval = True
+            st = ln.strip()
+            if st.startswith(("Stats:", "- output/", "Arquivos")) or "Arquivos gerados" in st:
+                i += 1
+                continue
             out.append(ln)
             i += 1
             continue
         # setup / seed
         if ln.strip().startswith("+ ") or ">> info-semente" in ln or ln.startswith("🏘️"):
             out.append(ln)
-        elif "Planejando Dia" in ln:
+        elif "Planejando Dia 1" in ln:
             out.append(ln)
         elif ln.startswith("=== Dia"):
-            # mantém só alguns headers pra não inflar
+            pending_header = ln  # guarda; só emite se vier conversa
+        elif ln.startswith("[") and "↔" in ln and convs_kept < 4:
+            if pending_header and pending_header != last_emitted_header:
+                out.append("")
+                out.append(pending_header)
+                last_emitted_header = pending_header
             out.append(ln)
-        elif ln.startswith("[") and "↔" in ln:
-            if convs_kept < 5:
-                out.append(ln)
-                # inclui os turnos seguintes (linhas indentadas) + propagação
-                j = i + 1
-                while j < len(lines) and (lines[j].startswith("    ") or ">>" in lines[j]):
-                    out.append(lines[j])
-                    j += 1
-                convs_kept += 1
-                i = j
-                continue
-        elif ln.startswith("[REFLEXÃO]") and convs_kept >= 1:
+            j = i + 1
+            while j < len(lines) and (lines[j].startswith("    ") or ">>" in lines[j]):
+                out.append(lines[j])
+                j += 1
+            convs_kept += 1
+            i = j
+            continue
+        elif ln.startswith("[REFLEXÃO]") and convs_kept >= 1 and refls_kept < 1:
+            out.append("")
             out.append(ln)
             j = i + 1
             cnt = 0
@@ -123,6 +144,7 @@ def curate(lines: list[str]) -> list[str]:
                 out.append(lines[j])
                 j += 1
                 cnt += 1
+            refls_kept += 1
             i = j
             continue
         i += 1
@@ -156,7 +178,7 @@ def render(lines: list[str], out_path: str) -> None:
         d.rectangle([0, 0, width, TITLEBAR], fill=TITLE_BG)
         for k, c in enumerate([(237, 106, 94), (245, 191, 79), (98, 197, 84)]):
             d.ellipse([PAD + k * 26, 11, PAD + k * 26 + 13, 24], fill=c)
-        d.text((width // 2 - 150, 8), "simulação social — modo mock", font=font, fill=DIM)
+        d.text((width // 2 - 160, 8), TITLE, font=font, fill=DIM)
         # body
         y = TITLEBAR + PAD
         for ln in visible:
@@ -197,7 +219,26 @@ def render(lines: list[str], out_path: str) -> None:
 
 
 def main() -> int:
-    lines = run_and_capture()
+    global TITLE
+    args = sys.argv[1:]
+    log_path = None
+    mode = "mock"
+    if "--from" in args:
+        log_path = args[args.index("--from") + 1]
+    if "--mode" in args:
+        mode = args[args.index("--mode") + 1]
+
+    # default: se existe o log da rodada LLM, usa ele (conversas reais, sem custo)
+    if log_path is None and mode == "mock" and os.path.exists("output/simulation_llm.log"):
+        log_path = "output/simulation_llm.log"
+
+    if log_path:
+        TITLE = "simulação social — modo llm (gpt-4o-mini)"
+        lines = read_log(log_path)
+    else:
+        TITLE = f"simulação social — modo {mode}"
+        lines = run_and_capture(mode)
+
     if not lines:
         print("[ERRO] nenhuma saída capturada")
         return 1
