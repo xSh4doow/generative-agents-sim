@@ -106,11 +106,12 @@ moradores ainda no Dia 1.
 > No modo `mock`, a consistência usa TF-IDF (scikit-learn) como proxy sem API —
 > útil pra reprodutibilidade, mas com sinal bem mais fraco que os embeddings.
 
-## Poster (Checkpoint 3)
+## Painel (entrega final)
 
-Draft do painel A1 em [`poster/`](poster/) — `poster.html` (fonte) e
-`poster_a1.pdf` (594 × 841 mm, pronto pra gráfica). Gera o QR do repo com
-`qrcode` e converte HTML→PDF via Chrome headless.
+Painel A1 final em [`painel/`](painel/) — `poster_a1.pdf` (594 × 841 mm + 3 mm
+de sangria, pronto pra gráfica) e `onepager_a4.pdf` (material de apoio A4
+frente/verso distribuído na sessão). Direção visual Swiss Info-Design com
+elementos de terminal; HTML→PDF via Chrome headless.
 
 ## Time
 
@@ -122,8 +123,8 @@ Draft do painel A1 em [`poster/`](poster/) — `poster.html` (fonte) e
 | Breno Figueira | Ambiente, loop de simulação |
 | Milena Capelli | Pipeline de avaliação, propagação |
 
-## Referência principal
+## Referências
 
-Park, J. S., O'Brien, J., Cai, C. J., Morris, M. R., Liang, P., & Bernstein, M. S. (2023). *Generative Agents: Interactive Simulacra of Human Behavior*. Em *Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology* (UIST '23).
+Referência principal: Park, J. S., O'Brien, J., Cai, C. J., Morris, M. R., Liang, P., & Bernstein, M. S. (2023). *Generative Agents: Interactive Simulacra of Human Behavior*. Em *Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology* (UIST '23).
 
-> As demais referências ABNT do Checkpoint 1 estão no relatório do grupo.
+Lista completa em ABNT: [`referencias.md`](referencias.md).

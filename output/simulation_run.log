@@ -1,0 +1,464 @@
+🏘️  Iniciando simulação no modo: mock
+  + Helena colocada em cafe
+  + Roberto colocada em biblioteca
+  + Camila colocada em praca
+  + Marcos colocada em praca
+  + Júlia colocada em casa_julia
+  >> info-semente plantada na Helena: "Vai ter uma feira de artesanato no próximo sábado na praça"
+
+--- Planejando Dia 1 ---
+
+=== Dia 1, 07h ===
+[praca] Camila ↔ Marcos — tópico: um café que tomei
+    Camila: Olá! Conta uma novidade.
+    Marcos: Aos poucos vou me acostumando.
+    Camila: Faz sentido. Lembranças antigas, né?
+    Marcos: Bom papo, até logo.
+
+=== Dia 1, 08h ===
+[praca] Camila ↔ Marcos — tópico: o tempo na vila
+    Camila: Olá! O que anda achando da vila?
+    Marcos: Foi um dia comum, mas bom.
+    Camila: Faz sentido. Um livro ou ideia recente, né?
+    Marcos: Bom papo, até logo.
+
+=== Dia 1, 09h ===
+[cafe] Roberto ↔ Camila — tópico: um café que tomei
+    Roberto: Tudo bem? Conta uma novidade.
+    Camila: Sobre o dia, é algo pra pensar mesmo.
+    Roberto: Faz sentido. Lembranças antigas, né?
+    Camila: Vamos nos falando.
+
+=== Dia 1, 10h ===
+[praca] Helena ↔ Camila — tópico: um livro ou ideia recente
+    Helena: Você ouviu que vai ter uma feira de artesanato no próximo sábado na praça?
+    Camila: Não sabia disso! Conta mais.
+    Helena: Acho que vai ser bom pra vila, todo mundo está animado.
+    Camila: Vou tentar passar lá no sábado, obrigado por contar.
+    >> Camila ficou sabendo da feira!
+
+=== Dia 1, 11h ===
+[biblioteca] Helena ↔ Camila — tópico: novidades da vizinhança
+    Helena: Você ouviu que vai ter uma feira de artesanato no próximo sábado na praça?
+    Camila: Não sabia disso! Conta mais.
+    Helena: Acho que vai ser bom pra vila, todo mundo está animado.
+    Camila: Vou tentar passar lá no sábado, obrigado por contar.
+
+=== Dia 1, 12h ===
+[cafe] Helena ↔ Camila — tópico: como foi o dia
+    Helena: Você ouviu que vai ter uma feira de artesanato no próximo sábado na praça?
+    Camila: Não sabia disso! Conta mais.
+    Helena: Acho que vai ser bom pra vila, todo mundo está animado.
+    Camila: Vou tentar passar lá no sábado, obrigado por contar.
+
+=== Dia 1, 13h ===
+[praca] Camila ↔ Júlia — tópico: lembranças antigas
+    Camila: Você ouviu que vai ter uma feira de artesanato no próximo sábado na praça?
+    Júlia: Não sabia disso! Conta mais.
+    Camila: Acho que vai ser bom pra vila, todo mundo está animado.
+    Júlia: Vou tentar passar lá no sábado, obrigado por contar.
+    >> Júlia ficou sabendo da feira!
+[REFLEXÃO] Helena:
+    - Percebo que as pessoas aqui se importam umas com as outras de verdade.
+    - Tenho notado padrões interessantes no dia a dia da vila.
+    - Algumas conversas recentes mexeram comigo de um jeito bom.
+[REFLEXÃO] Camila:
+    - Tem coisas circulando pela vila que merecem atenção.
+    - Cada dia traz uma surpresa pequena, e isso é bonito.
+    - Sinto que estou criando vínculos verdadeiros com a vizinhança.
+
+=== Dia 1, 14h ===
+[cafe] Camila ↔ Júlia — tópico: Vai ter uma feira de artesanato no próximo sábado na praça
+    Camila: Você ouviu que vai ter uma feira de artesanato no próximo sábado na praça?
+    Júlia: Não sabia disso! Conta mais.
+    Camila: Acho que vai ser bom pra vila, todo mundo está animado.
+    Júlia: Vou tentar passar lá no sábado, obrigado por contar.
+[biblioteca] Helena ↔ Roberto — tópico: como foi o dia
+    Helena: Olá! Conta uma novidade.
+    Roberto: Tudo tranquilo, e com você?
+    Helena: Faz sentido. Planos para amanhã, né?
+    Roberto: Foi bom conversar, até mais!
+[REFLEXÃO] Roberto:
+    - Tenho notado padrões interessantes no dia a dia da vila.
+    - Algumas conversas recentes mexeram comigo de um jeito bom.
+    - Talvez eu esteja vendo a vila com olhos novos hoje.
+[REFLEXÃO] Marcos:
+    - Preciso lembrar de cuidar de mim também, não só dos outros.
+    - Acho que preciso me abrir mais para novas conversas.
+    - Tenho notado padrões interessantes no dia a dia da vila.
+[REFLEXÃO] Júlia:
+    - Sinto que estou criando vínculos verdadeiros com a vizinhança.
+    - Percebo que as pessoas aqui se importam umas com as outras de verdade.
+    - A rotina daqui me traz mais paz do que eu esperava.
+
+=== Dia 1, 15h ===
+
+=== Dia 1, 16h ===
+[cafe] Helena ↔ Roberto — tópico: um livro ou ideia recente
+    Helena: E aí! Algo interessante sobre o dia?
+    Roberto: Tudo tranquilo, e com você?
+    Helena: Faz sentido. Um livro ou ideia recente, né?
+    Roberto: Bom papo, até logo.
+
+=== Dia 1, 17h ===
+[biblioteca] Helena ↔ Júlia — tópico: planos para amanhã
+    Helena: Tudo bem? Conta uma novidade.
+    Júlia: Aos poucos vou me acostumando.
+    Helena: Faz sentido. Novidades da vizinhança, né?
+    Júlia: Bom papo, até logo.
+
+=== Dia 1, 18h ===
+[praca] Helena ↔ Roberto — tópico: Vai ter uma feira de artesanato no próximo sábado na praça
+    Helena: Bom te ver! Conta uma novidade.
+    Roberto: Foi um dia comum, mas bom.
+    Helena: Faz sentido. Um café que tomei, né?
+    Roberto: Cuide-se, tchau!
+
+=== Dia 1, 19h ===
+[praca] Roberto ↔ Camila — tópico: novidades da vizinhança
+    Roberto: Você ouviu que vai ter uma feira de artesanato no próximo sábado na praça?
+    Camila: Não sabia disso! Conta mais.
+    Roberto: Acho que vai ser bom pra vila, todo mundo está animado.
+    Camila: Vou tentar passar lá no sábado, obrigado por contar.
+    >> Roberto ficou sabendo da feira!
+
+=== Dia 1, 20h ===
+[praca] Camila ↔ Marcos — tópico: como foi o dia
+    Camila: Você ouviu que vai ter uma feira de artesanato no próximo sábado na praça?
+    Marcos: Não sabia disso! Conta mais.
+    Camila: Acho que vai ser bom pra vila, todo mundo está animado.
+    Marcos: Vou tentar passar lá no sábado, obrigado por contar.
+    >> Marcos ficou sabendo da feira!
+
+=== Dia 1, 21h ===
+[praca] Camila ↔ Marcos — tópico: como foi o dia
+    Camila: Você ouviu que vai ter uma feira de artesanato no próximo sábado na praça?
+    Marcos: Não sabia disso! Conta mais.
+    Camila: Acho que vai ser bom pra vila, todo mundo está animado.
+    Marcos: Vou tentar passar lá no sábado, obrigado por contar.
+[REFLEXÃO] Helena:
+    - Preciso lembrar de cuidar de mim também, não só dos outros.
+    - A rotina daqui me traz mais paz do que eu esperava.
+    - Reparei que silêncios às vezes dizem mais que palavras.
+[REFLEXÃO] Camila:
+    - Aprendo coisas novas sobre os outros quando paro para escutar.
+    - Algumas conversas recentes mexeram comigo de um jeito bom.
+    - Cada dia traz uma surpresa pequena, e isso é bonito.
+
+--- Planejando Dia 2 ---
+
+=== Dia 2, 07h ===
+[praca] Camila ↔ Marcos — tópico: um café que tomei
+    Camila: Oi! Algo interessante sobre o dia?
+    Marcos: Tudo tranquilo, e com você?
+    Camila: Faz sentido. Como foi o dia, né?
+    Marcos: Cuide-se, tchau!
+[REFLEXÃO] Roberto:
+    - Algumas conversas recentes mexeram comigo de um jeito bom.
+    - Tem coisas circulando pela vila que merecem atenção.
+    - Reparei que silêncios às vezes dizem mais que palavras.
+[REFLEXÃO] Marcos:
+    - Preciso lembrar de cuidar de mim também, não só dos outros.
+    - Percebo que as pessoas aqui se importam umas com as outras de verdade.
+    - Cada dia traz uma surpresa pequena, e isso é bonito.
+[REFLEXÃO] Júlia:
+    - Sinto que estou criando vínculos verdadeiros com a vizinhança.
+    - Tenho notado padrões interessantes no dia a dia da vila.
+    - Reparei que silêncios às vezes dizem mais que palavras.
+
+=== Dia 2, 08h ===
+[praca] Camila ↔ Marcos — tópico: planos para amanhã
+    Camila: Você ouviu que vai ter uma feira de artesanato no próximo sábado na praça?
+    Marcos: Não sabia disso! Conta mais.
+    Camila: Acho que vai ser bom pra vila, todo mundo está animado.
+    Marcos: Vou tentar passar lá no sábado, obrigado por contar.
+
+=== Dia 2, 09h ===
+
+=== Dia 2, 10h ===
+[biblioteca] Marcos ↔ Helena — tópico: um café que tomei
+    Marcos: Tudo bem? Conta uma novidade.
+    Helena: Aos poucos vou me acostumando.
+    Marcos: Faz sentido. Como foi o dia, né?
+    Helena: Vamos nos falando.
+
+=== Dia 2, 11h ===
+[biblioteca] Helena ↔ Roberto — tópico: novidades da vizinhança
+    Helena: Você ouviu que vai ter uma feira de artesanato no próximo sábado na praça?
+    Roberto: Não sabia disso! Conta mais.
+    Helena: Acho que vai ser bom pra vila, todo mundo está animado.
+    Roberto: Vou tentar passar lá no sábado, obrigado por contar.
+
+=== Dia 2, 12h ===
+[cafe] Helena ↔ Roberto — tópico: como foi o dia
+    Helena: Você ouviu que vai ter uma feira de artesanato no próximo sábado na praça?
+    Roberto: Não sabia disso! Conta mais.
+    Helena: Acho que vai ser bom pra vila, todo mundo está animado.
+    Roberto: Vou tentar passar lá no sábado, obrigado por contar.
+[biblioteca] Camila ↔ Marcos — tópico: o tempo na vila
+    Camila: Bom te ver! Conta uma novidade.
+    Marcos: Aos poucos vou me acostumando.
+    Camila: Faz sentido. Planos para amanhã, né?
+    Marcos: Acho que vou indo, a gente se vê.
+
+=== Dia 2, 13h ===
+[cafe] Marcos ↔ Júlia — tópico: um café que tomei
+    Marcos: Você ouviu que vai ter uma feira de artesanato no próximo sábado na praça?
+    Júlia: Não sabia disso! Conta mais.
+    Marcos: Acho que vai ser bom pra vila, todo mundo está animado.
+    Júlia: Vou tentar passar lá no sábado, obrigado por contar.
+
+=== Dia 2, 14h ===
+[praca] Helena ↔ Camila — tópico: novidades da vizinhança
+    Helena: Oi! Como foi seu dia?
+    Camila: Sobre o dia, é algo pra pensar mesmo.
+    Helena: Faz sentido. Novidades da vizinhança, né?
+    Camila: Acho que vou indo, a gente se vê.
+[biblioteca] Marcos ↔ Júlia — tópico: o tempo na vila
+    Marcos: Você ouviu que vai ter uma feira de artesanato no próximo sábado na praça?
+    Júlia: Não sabia disso! Conta mais.
+    Marcos: Acho que vai ser bom pra vila, todo mundo está animado.
+    Júlia: Vou tentar passar lá no sábado, obrigado por contar.
+[REFLEXÃO] Helena:
+    - Talvez eu esteja vendo a vila com olhos novos hoje.
+    - A rotina daqui me traz mais paz do que eu esperava.
+    - Reparei que silêncios às vezes dizem mais que palavras.
+[REFLEXÃO] Camila:
+    - Percebo que as pessoas aqui se importam umas com as outras de verdade.
+    - Sinto que estou criando vínculos verdadeiros com a vizinhança.
+    - A rotina daqui me traz mais paz do que eu esperava.
+
+=== Dia 2, 15h ===
+[cafe] Marcos ↔ Júlia — tópico: o tempo na vila
+    Marcos: Você ouviu que vai ter uma feira de artesanato no próximo sábado na praça?
+    Júlia: Não sabia disso! Conta mais.
+    Marcos: Acho que vai ser bom pra vila, todo mundo está animado.
+    Júlia: Vou tentar passar lá no sábado, obrigado por contar.
+[biblioteca] Helena ↔ Roberto — tópico: como foi o dia
+    Helena: Olá! Conta uma novidade.
+    Roberto: Foi um dia comum, mas bom.
+    Helena: Faz sentido. Novidades da vizinhança, né?
+    Roberto: Bom papo, até logo.
+[REFLEXÃO] Roberto:
+    - A rotina daqui me traz mais paz do que eu esperava.
+    - Reparei que silêncios às vezes dizem mais que palavras.
+    - Tenho notado padrões interessantes no dia a dia da vila.
+[REFLEXÃO] Marcos:
+    - Sinto que estou criando vínculos verdadeiros com a vizinhança.
+    - Talvez eu esteja vendo a vila com olhos novos hoje.
+    - Algumas conversas recentes mexeram comigo de um jeito bom.
+[REFLEXÃO] Júlia:
+    - Sinto que estou criando vínculos verdadeiros com a vizinhança.
+    - Percebo que as pessoas aqui se importam umas com as outras de verdade.
+    - Cada dia traz uma surpresa pequena, e isso é bonito.
+
+=== Dia 2, 16h ===
+
+=== Dia 2, 17h ===
+[praca] Helena ↔ Marcos — tópico: um café que tomei
+    Helena: Você ouviu que vai ter uma feira de artesanato no próximo sábado na praça?
+    Marcos: Não sabia disso! Conta mais.
+    Helena: Acho que vai ser bom pra vila, todo mundo está animado.
+    Marcos: Vou tentar passar lá no sábado, obrigado por contar.
+
+=== Dia 2, 18h ===
+[praca] Marcos ↔ Roberto — tópico: o tempo na vila
+    Marcos: Você ouviu que vai ter uma feira de artesanato no próximo sábado na praça?
+    Roberto: Não sabia disso! Conta mais.
+    Marcos: Acho que vai ser bom pra vila, todo mundo está animado.
+    Roberto: Vou tentar passar lá no sábado, obrigado por contar.
+[cafe] Júlia ↔ Helena — tópico: novidades da vizinhança
+    Júlia: Você ouviu que vai ter uma feira de artesanato no próximo sábado na praça?
+    Helena: Não sabia disso! Conta mais.
+    Júlia: Acho que vai ser bom pra vila, todo mundo está animado.
+    Helena: Vou tentar passar lá no sábado, obrigado por contar.
+
+=== Dia 2, 19h ===
+[biblioteca] Helena ↔ Roberto — tópico: novidades da vizinhança
+    Helena: Você ouviu que vai ter uma feira de artesanato no próximo sábado na praça?
+    Roberto: Não sabia disso! Conta mais.
+    Helena: Acho que vai ser bom pra vila, todo mundo está animado.
+    Roberto: Vou tentar passar lá no sábado, obrigado por contar.
+
+=== Dia 2, 20h ===
+
+=== Dia 2, 21h ===
+
+--- Planejando Dia 3 ---
+
+=== Dia 3, 07h ===
+[praca] Camila ↔ Marcos — tópico: Vai ter uma feira de artesanato no próximo sábado na praça
+    Camila: Você ouviu que vai ter uma feira de artesanato no próximo sábado na praça?
+    Marcos: Não sabia disso! Conta mais.
+    Camila: Acho que vai ser bom pra vila, todo mundo está animado.
+    Marcos: Vou tentar passar lá no sábado, obrigado por contar.
+[REFLEXÃO] Helena:
+    - Algumas conversas recentes mexeram comigo de um jeito bom.
+    - A rotina daqui me traz mais paz do que eu esperava.
+    - Aprendo coisas novas sobre os outros quando paro para escutar.
+[REFLEXÃO] Camila:
+    - Talvez eu esteja vendo a vila com olhos novos hoje.
+    - Sinto que estou criando vínculos verdadeiros com a vizinhança.
+    - Acho que preciso me abrir mais para novas conversas.
+
+=== Dia 3, 08h ===
+[REFLEXÃO] Roberto:
+    - Sinto que estou criando vínculos verdadeiros com a vizinhança.
+    - Tem coisas circulando pela vila que merecem atenção.
+    - Algumas conversas recentes mexeram comigo de um jeito bom.
+[REFLEXÃO] Marcos:
+    - Reparei que silêncios às vezes dizem mais que palavras.
+    - Tem coisas circulando pela vila que merecem atenção.
+    - Acho que preciso me abrir mais para novas conversas.
+[REFLEXÃO] Júlia:
+    - Talvez eu esteja vendo a vila com olhos novos hoje.
+    - Percebo que as pessoas aqui se importam umas com as outras de verdade.
+    - Cada dia traz uma surpresa pequena, e isso é bonito.
+
+=== Dia 3, 09h ===
+
+=== Dia 3, 10h ===
+[praca] Camila ↔ Marcos — tópico: como foi o dia
+    Camila: Tudo bem? Algo interessante sobre o dia?
+    Marcos: Aos poucos vou me acostumando.
+    Camila: Faz sentido. Um café que tomei, né?
+    Marcos: Vamos nos falando.
+[cafe] Helena ↔ Roberto — tópico: novidades da vizinhança
+    Helena: Olá! O que anda achando da vila?
+    Roberto: Sobre o dia, é algo pra pensar mesmo.
+    Helena: Faz sentido. Um café que tomei, né?
+    Roberto: Foi bom conversar, até mais!
+
+=== Dia 3, 11h ===
+[biblioteca] Helena ↔ Roberto — tópico: como foi o dia
+    Helena: Bom te ver! O que anda achando da vila?
+    Roberto: Aos poucos vou me acostumando.
+    Helena: Faz sentido. Novidades da vizinhança, né?
+    Roberto: Acho que vou indo, a gente se vê.
+
+=== Dia 3, 12h ===
+
+=== Dia 3, 13h ===
+[biblioteca] Júlia ↔ Helena — tópico: o tempo na vila
+    Júlia: Você ouviu que vai ter uma feira de artesanato no próximo sábado na praça?
+    Helena: Não sabia disso! Conta mais.
+    Júlia: Acho que vai ser bom pra vila, todo mundo está animado.
+    Helena: Vou tentar passar lá no sábado, obrigado por contar.
+
+=== Dia 3, 14h ===
+[praca] Helena ↔ Júlia — tópico: um livro ou ideia recente
+    Helena: Oi! O que anda achando da vila?
+    Júlia: Aos poucos vou me acostumando.
+    Helena: Faz sentido. Como foi o dia, né?
+    Júlia: Vamos nos falando.
+[biblioteca] Roberto ↔ Camila — tópico: o tempo na vila
+    Roberto: Você ouviu que vai ter uma feira de artesanato no próximo sábado na praça?
+    Camila: Não sabia disso! Conta mais.
+    Roberto: Acho que vai ser bom pra vila, todo mundo está animado.
+    Camila: Vou tentar passar lá no sábado, obrigado por contar.
+
+=== Dia 3, 15h ===
+[cafe] Marcos ↔ Júlia — tópico: planos para amanhã
+    Marcos: Você ouviu que vai ter uma feira de artesanato no próximo sábado na praça?
+    Júlia: Não sabia disso! Conta mais.
+    Marcos: Acho que vai ser bom pra vila, todo mundo está animado.
+    Júlia: Vou tentar passar lá no sábado, obrigado por contar.
+[biblioteca] Camila ↔ Helena — tópico: o tempo na vila
+    Camila: Você ouviu que vai ter uma feira de artesanato no próximo sábado na praça?
+    Helena: Não sabia disso! Conta mais.
+    Camila: Acho que vai ser bom pra vila, todo mundo está animado.
+    Helena: Vou tentar passar lá no sábado, obrigado por contar.
+[REFLEXÃO] Helena:
+    - Talvez eu esteja vendo a vila com olhos novos hoje.
+    - Cada dia traz uma surpresa pequena, e isso é bonito.
+    - Aprendo coisas novas sobre os outros quando paro para escutar.
+[REFLEXÃO] Camila:
+    - Cada dia traz uma surpresa pequena, e isso é bonito.
+    - Sinto que estou criando vínculos verdadeiros com a vizinhança.
+    - A rotina daqui me traz mais paz do que eu esperava.
+
+=== Dia 3, 16h ===
+[cafe] Júlia ↔ Helena — tópico: o tempo na vila
+    Júlia: Oi! Algo interessante sobre o dia?
+    Helena: Tudo tranquilo, e com você?
+    Júlia: Faz sentido. Planos para amanhã, né?
+    Helena: Bom papo, até logo.
+[REFLEXÃO] Roberto:
+    - Talvez eu esteja vendo a vila com olhos novos hoje.
+    - Acho que preciso me abrir mais para novas conversas.
+    - Reparei que silêncios às vezes dizem mais que palavras.
+[REFLEXÃO] Marcos:
+    - Cada dia traz uma surpresa pequena, e isso é bonito.
+    - Tenho notado padrões interessantes no dia a dia da vila.
+    - A rotina daqui me traz mais paz do que eu esperava.
+[REFLEXÃO] Júlia:
+    - Sinto que estou criando vínculos verdadeiros com a vizinhança.
+    - Talvez eu esteja vendo a vila com olhos novos hoje.
+    - Tem coisas circulando pela vila que merecem atenção.
+
+=== Dia 3, 17h ===
+[biblioteca] Roberto ↔ Helena — tópico: o tempo na vila
+    Roberto: Você ouviu que vai ter uma feira de artesanato no próximo sábado na praça?
+    Helena: Não sabia disso! Conta mais.
+    Roberto: Acho que vai ser bom pra vila, todo mundo está animado.
+    Helena: Vou tentar passar lá no sábado, obrigado por contar.
+
+=== Dia 3, 18h ===
+[cafe] Roberto ↔ Júlia — tópico: novidades da vizinhança
+    Roberto: Você ouviu que vai ter uma feira de artesanato no próximo sábado na praça?
+    Júlia: Não sabia disso! Conta mais.
+    Roberto: Acho que vai ser bom pra vila, todo mundo está animado.
+    Júlia: Vou tentar passar lá no sábado, obrigado por contar.
+[biblioteca] Helena ↔ Camila — tópico: Vai ter uma feira de artesanato no próximo sábado na praça
+    Helena: Você ouviu que vai ter uma feira de artesanato no próximo sábado na praça?
+    Camila: Não sabia disso! Conta mais.
+    Helena: Acho que vai ser bom pra vila, todo mundo está animado.
+    Camila: Vou tentar passar lá no sábado, obrigado por contar.
+
+=== Dia 3, 19h ===
+[biblioteca] Camila ↔ Marcos — tópico: como foi o dia
+    Camila: Você ouviu que vai ter uma feira de artesanato no próximo sábado na praça?
+    Marcos: Não sabia disso! Conta mais.
+    Camila: Acho que vai ser bom pra vila, todo mundo está animado.
+    Marcos: Vou tentar passar lá no sábado, obrigado por contar.
+
+=== Dia 3, 20h ===
+[praca] Camila ↔ Marcos — tópico: planos para amanhã
+    Camila: Você ouviu que vai ter uma feira de artesanato no próximo sábado na praça?
+    Marcos: Não sabia disso! Conta mais.
+    Camila: Acho que vai ser bom pra vila, todo mundo está animado.
+    Marcos: Vou tentar passar lá no sábado, obrigado por contar.
+
+=== Dia 3, 21h ===
+[praca] Camila ↔ Marcos — tópico: Vai ter uma feira de artesanato no próximo sábado na praça
+    Camila: E aí! Conta uma novidade.
+    Marcos: Tudo tranquilo, e com você?
+    Camila: Faz sentido. O tempo na vila, né?
+    Marcos: Bom papo, até logo.
+
+============================================================
+📊 AVALIAÇÃO
+============================================================
+
+--- Consistência de persona ---
+    Helena: similaridade média = 0.053 (n=30, método=tfidf)
+   Roberto: similaridade média = 0.047 (n=30, método=tfidf)
+    Camila: similaridade média = 0.061 (n=30, método=tfidf)
+    Marcos: similaridade média = 0.038 (n=30, método=tfidf)
+     Júlia: similaridade média = 0.046 (n=30, método=tfidf)
+  Média geral: 0.049
+
+--- Propagação de informação ---
+  Info-semente: "Vai ter uma feira de artesanato no próximo sábado na praça"
+  Taxa final: 100% (5/5)
+  Timeline:
+      Helena — Dia 1, 07h
+      Camila — Dia 1, 10h
+       Júlia — Dia 1, 13h
+     Roberto — Dia 1, 19h
+      Marcos — Dia 1, 20h
+
+✅ Resultados salvos em output/
+   - output/simulation_log.json
+   - output/conversations.md
+   - output/summary.md
