@@ -49,3 +49,6 @@ Legibilidade A1: corpo ≥24pt físico (~9px/mm no HTML).
 2. Poster A1 completo → review → PDF
 3. One-pager A4 → review → PDF
 4. referencias.md + rename poster/→painel/ + README + commit logs + push
+
+## Decisão de direção visual (2026-06-07)
+**Swiss Info-Design** (grid modular, Archivo, vermelho #E63312, numeração gigante) **incorporando elementos Dark Tech/Terminal**: blocos de log como janelas de terminal escuras (#0F0F0F), labels em JetBrains Mono, statusbar de simulação. Aprovado pelo Pedro em 07/Jun.

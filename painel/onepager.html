@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>One-Pager A4 — Micro-Simulação Social com Agentes Generativos · G7</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#111111;
+    --paper:#ffffff;
+    --accent:#E63312;
+    --hair:#d8d8d8;
+    --grey:#bbbbbb;
+    --term-bg:#0F0F0F;
+    --term-border:#2a2a2a;
+    --term-green:#46C97E;
+    --mono:'JetBrains Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:#e9e9e9;font-family:'Archivo',sans-serif;color:var(--ink);}
+  @page{size:A4;margin:0;}
+  .page{
+    width:210mm;height:297mm;
+    background:var(--paper);
+    margin:0 auto;
+    padding:11mm 13mm 10mm;
+    position:relative;
+    overflow:hidden;
+    display:flex;flex-direction:column;
+    page-break-after:always;
+  }
+  @media print{
+    html,body{background:#fff;}
+    .page{margin:0;box-shadow:none;}
+  }
+
+  /* ---------- typographic primitives ---------- */
+  .caps{text-transform:uppercase;letter-spacing:.08em;}
+  .mono{font-family:var(--mono);}
+  .hairline{border:0;border-top:.35mm solid var(--ink);}
+  .hair-thin{border:0;border-top:.18mm solid var(--hair);}
+
+  .sec{margin-top:4.6mm;}
+  .sec-head{display:flex;align-items:baseline;gap:2.6mm;border-top:.45mm solid var(--ink);padding-top:1.6mm;margin-bottom:2.4mm;}
+  .sec-num{font-family:var(--mono);font-weight:700;font-size:10pt;color:var(--accent);}
+  .sec-title{font-weight:800;font-size:11.5pt;letter-spacing:.08em;text-transform:uppercase;}
+  .sec-kicker{margin-left:auto;font-family:var(--mono);font-size:6.6pt;color:#777;letter-spacing:.04em;}
+
+  p.body{font-size:9.5pt;line-height:1.5;}
+  .small{font-size:8pt;line-height:1.45;}
+
+  /* ---------- statusbar ---------- */
+  .statusbar{
+    background:var(--term-bg);
+    border:.3mm solid var(--term-border);
+    color:#c9c9c9;
+    font-family:var(--mono);
+    font-size:7.5pt;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:1.8mm 3.2mm;
+    border-radius:2mm;
+  }
+  .statusbar .dot{color:var(--term-green);}
+  .statusbar .right{color:#fff;font-weight:700;letter-spacing:.08em;}
+
+  /* ---------- masthead ---------- */
+  .masthead{display:flex;align-items:flex-start;gap:6mm;margin-top:4.4mm;}
+  .masthead .left{flex:1;}
+  h1{
+    font-weight:800;font-size:21pt;line-height:1.04;letter-spacing:-0.02em;
+    margin-bottom:1.8mm;
+  }
+  .subtitle{font-size:10pt;font-weight:600;color:#444;letter-spacing:0;margin-bottom:3mm;}
+  .wordmark{
+    font-weight:800;font-size:9pt;letter-spacing:.08em;text-transform:uppercase;
+    white-space:nowrap;padding-top:1mm;
+  }
+  .wordmark .sq{color:var(--accent);}
+  .authors{font-size:8pt;line-height:1.5;}
+  .authors b{font-weight:600;}
+  .inst{font-family:var(--mono);font-size:7pt;color:#666;margin-top:1.2mm;letter-spacing:.02em;}
+
+  /* ---------- two-col helper ---------- */
+  .cols{display:flex;gap:6mm;}
+  .cols > div{flex:1;min-width:0;}
+
+  /* ---------- params table ---------- */
+  table.params{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:7.8pt;}
+  table.params td{padding:1.25mm 0;border-bottom:.18mm solid var(--hair);vertical-align:top;}
+  table.params td.k{color:#666;width:34%;letter-spacing:.02em;}
+  table.params td.v{font-weight:700;}
+  table.params tr:last-child td{border-bottom:none;}
+
+  /* ---------- terminal ---------- */
+  .terminal{
+    background:var(--term-bg);
+    border:.3mm solid var(--term-border);
+    border-radius:2.5mm;
+    overflow:hidden;
+  }
+  .term-head{
+    display:flex;align-items:center;gap:1.6mm;
+    padding:1.8mm 2.8mm;
+    border-bottom:.3mm solid var(--term-border);
+  }
+  .term-head .d{width:2.2mm;height:2.2mm;border-radius:50%;}
+  .d1{background:#FF5F57;}.d2{background:#FEBC2E;}.d3{background:#28C840;}
+  .term-head .t{margin-left:auto;font-family:var(--mono);font-size:6.4pt;color:#777;}
+  .term-body{
+    padding:2.6mm 3mm 3mm;
+    font-family:var(--mono);font-size:7.6pt;line-height:1.62;color:#d6d6d6;
+  }
+  .term-body .meta{color:#8a8a8a;}
+  .term-body .who{color:#fff;font-weight:700;}
+  .term-body .ev{color:var(--term-green);font-weight:700;}
+
+  /* ---------- charts ---------- */
+  .chart-box{border:.18mm solid var(--hair);padding:3mm 3mm 2.4mm;}
+  .chart-title{font-weight:800;font-size:8.5pt;letter-spacing:.08em;text-transform:uppercase;margin-bottom:2mm;}
+  .caption{font-family:var(--mono);font-size:6.8pt;color:#555;margin-top:1.8mm;letter-spacing:.01em;}
+  .caption .acc{color:var(--accent);font-weight:700;}
+
+  /* ---------- discussion ---------- */
+  .disc h3{font-weight:800;font-size:9pt;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.8mm;padding-bottom:1.2mm;border-bottom:.18mm solid var(--hair);}
+  .disc h3 .mark{color:var(--accent);}
+  ul.tight{list-style:none;}
+  ul.tight li{
+    font-size:8.6pt;line-height:1.42;margin-bottom:1.7mm;
+    padding-left:4mm;position:relative;
+  }
+  ul.tight li::before{
+    content:"—";position:absolute;left:0;color:#999;
+  }
+  .next{
+    margin-top:2.6mm;padding-top:2mm;border-top:.18mm solid var(--hair);
+    font-size:8.6pt;line-height:1.45;
+  }
+  .next b{font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:7.5pt;}
+
+  /* ---------- references ---------- */
+  .refs{column-count:2;column-gap:6mm;font-size:7.2pt;line-height:1.42;}
+  .refs .ref{margin-bottom:1.5mm;break-inside:avoid;}
+  .refs .n{font-family:var(--mono);color:var(--accent);font-weight:700;}
+
+  /* ---------- footer / QR ---------- */
+  .foot{
+    margin-top:auto;
+    border-top:.45mm solid var(--ink);
+    padding-top:2.6mm;
+    display:flex;align-items:center;gap:5mm;
+  }
+  .foot img{width:26mm;height:26mm;image-rendering:pixelated;border:.18mm solid var(--hair);}
+  .foot .repo{font-family:var(--mono);font-size:7.6pt;font-weight:700;letter-spacing:.01em;}
+  .foot .repo-sub{font-family:var(--mono);font-size:6.6pt;color:#777;margin-top:1mm;}
+  .foot .endmark{margin-left:auto;text-align:right;}
+  .foot .endmark .g7{font-weight:800;font-size:13pt;letter-spacing:-0.02em;}
+  .foot .endmark .g7 span{color:var(--accent);}
+  .foot .endmark .sub{font-family:var(--mono);font-size:6.4pt;color:#777;margin-top:.6mm;}
+
+  .pagefoot{
+    margin-top:auto;
+    border-top:.18mm solid var(--hair);
+    padding-top:1.8mm;
+    display:flex;justify-content:space-between;
+    font-family:var(--mono);font-size:6.4pt;color:#888;letter-spacing:.04em;
+  }
+
+  svg text{font-family:'JetBrains Mono',monospace;}
+</style>
+</head>
+<body>
+
+<!-- ================= PAGE 1 ================= -->
+<section class="page">
+
+  <div class="statusbar">
+    <span><span class="dot">&#9679;</span>&nbsp; sim://vila — 5 agentes &middot; 3 dias &middot; gpt-4o-mini</span>
+    <span class="right">GRUPO G7</span>
+  </div>
+
+  <div class="masthead">
+    <div class="left">
+      <h1>Micro-Simulação Social<br>com Agentes Generativos</h1>
+      <div class="subtitle">Replicando Emergência Social em Escala Reduzida com LLMs</div>
+      <div class="authors">
+        Breno da Barra Figueira &middot; Luiza Abrahão Pedroso &middot; Milena Capelli Santos &middot; Pedro Beresford Rocha &middot; Victor Gabriel Accorsi Amorim
+      </div>
+      <div class="inst">PUC-CAMPINAS &middot; TÓPICOS EM ENGENHARIA DE SOFTWARE (12463) &middot; 1º SEMESTRE 2026 &middot; GRUPO G7</div>
+    </div>
+    <div class="wordmark"><span class="sq">&#9632;</span> PUC-CAMPINAS</div>
+  </div>
+
+  <!-- 01 RESUMO -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-num">01</span>
+      <span class="sec-title">Resumo</span>
+      <span class="sec-kicker">park et al., uist 2023 — replicação reduzida</span>
+    </div>
+    <p class="body">
+      Recriação reduzida da arquitetura do paper <i>Generative Agents</i> (Park et al., UIST&nbsp;2023):
+      <b>5 agentes LLM</b> com persona, memória, reflexão e planejamento convivem numa vila textual por
+      <b>3 dias virtuais</b>. Investigamos se a emergência social observada com 25 agentes se mantém em
+      escala mínima — medindo <b>consistência de persona</b> e <b>propagação de informação</b>.
+    </p>
+  </div>
+
+  <!-- 02 ARQUITETURA -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-num">02</span>
+      <span class="sec-title">Arquitetura</span>
+      <span class="sec-kicker">4 módulos cognitivos + llm central</span>
+    </div>
+    <div class="cols">
+      <div style="flex:1.35;">
+        <svg viewBox="0 0 380 150" width="100%" style="display:block;">
+          <!-- ambiente -->
+          <rect x="2" y="2" width="246" height="146" fill="none" stroke="#111" stroke-width="1.4"/>
+          <text x="12" y="18" font-size="9" font-weight="700" letter-spacing="1.5" fill="#111">AMBIENTE &middot; VILA</text>
+          <text x="12" y="30" font-size="7" fill="#888">casas &middot; café &middot; praça &middot; mercado &middot; biblioteca</text>
+          <!-- agente -->
+          <rect x="26" y="42" width="198" height="92" fill="#fff" stroke="#111" stroke-width="1"/>
+          <text x="36" y="57" font-size="8.5" font-weight="700" letter-spacing="1.2" fill="#111">AGENTE</text>
+          <!-- modules -->
+          <g font-size="6.6" fill="#111">
+            <rect x="36" y="66" width="86" height="22" fill="none" stroke="#999" stroke-width=".7"/>
+            <text x="79" y="79.5" text-anchor="middle">PERSONA</text>
+            <rect x="128" y="66" width="86" height="22" fill="none" stroke="#999" stroke-width=".7"/>
+            <text x="171" y="79.5" text-anchor="middle">MEM&Oacute;RIA</text>
+            <rect x="36" y="98" width="86" height="22" fill="none" stroke="#999" stroke-width=".7"/>
+            <text x="79" y="111.5" text-anchor="middle">REFLEX&Atilde;O</text>
+            <rect x="128" y="98" width="86" height="22" fill="none" stroke="#999" stroke-width=".7"/>
+            <text x="171" y="111.5" text-anchor="middle">PLANEJAMENTO</text>
+          </g>
+          <!-- percepcao / acao -->
+          <g stroke="#111" stroke-width=".8" fill="#111">
+            <line x1="14" y1="62" x2="14" y2="114"/>
+            <polygon points="14,118 11.5,112 16.5,112"/>
+            <line x1="20" y1="114" x2="20" y2="62"/>
+            <polygon points="20,58 17.5,64 22.5,64"/>
+          </g>
+          <text x="9" y="92" font-size="5.6" fill="#666" transform="rotate(-90 9 92)" text-anchor="middle">PERCEP&Ccedil;&Atilde;O / A&Ccedil;&Atilde;O</text>
+          <!-- LLM -->
+          <rect x="294" y="56" width="76" height="40" fill="#E63312"/>
+          <text x="332" y="74" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">LLM</text>
+          <text x="332" y="86" text-anchor="middle" font-size="6" fill="#ffd2c8">gpt-4o-mini</text>
+          <!-- arrows agente <-> llm -->
+          <g stroke="#111" stroke-width=".9" fill="#111">
+            <line x1="224" y1="68" x2="288" y2="68"/>
+            <polygon points="292,68 285,65.4 285,70.6"/>
+            <line x1="288" y1="84" x2="230" y2="84"/>
+            <polygon points="226,84 233,81.4 233,86.6"/>
+          </g>
+          <text x="258" y="62" font-size="5.6" fill="#666" text-anchor="middle">PROMPT</text>
+          <text x="258" y="94" font-size="5.6" fill="#666" text-anchor="middle">DECIS&Atilde;O</text>
+        </svg>
+      </div>
+      <div style="flex:1;">
+        <p class="body" style="font-size:9pt;">
+          Cada agente acopla quatro módulos cognitivos a um LLM central.
+          Recuperação de memória pontua por <b>recência &times; relevância &times; importância</b>.
+          Reflexão dispara por acúmulo de importância.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 EXPERIMENTO -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-num">03</span>
+      <span class="sec-title">Experimento</span>
+      <span class="sec-kicker">setup + rodada real com llm</span>
+    </div>
+    <div class="cols">
+      <div>
+        <table class="params">
+          <tr><td class="k">AGENTES</td><td class="v">5</td></tr>
+          <tr><td class="k">DIAS</td><td class="v">3</td></tr>
+          <tr><td class="k">HORAS/DIA</td><td class="v">15 (7h–21h)</td></tr>
+          <tr><td class="k">LLM</td><td class="v">gpt-4o-mini</td></tr>
+          <tr><td class="k">CONVERSAS</td><td class="v">29</td></tr>
+          <tr><td class="k">REFLEX&Otilde;ES</td><td class="v">25</td></tr>
+          <tr><td class="k">OBSERVA&Ccedil;&Otilde;ES</td><td class="v">226</td></tr>
+          <tr><td class="k">INFO-SEMENTE</td><td class="v">"Feira de artesanato no s&aacute;bado"</td></tr>
+        </table>
+      </div>
+      <div style="flex:1.25;">
+        <div class="terminal">
+          <div class="term-head">
+            <span class="d d1"></span><span class="d d2"></span><span class="d d3"></span>
+            <span class="t">sim://vila — log de conversa</span>
+          </div>
+          <div class="term-body">
+            <div class="meta">[cafe] Helena &harr; Camila — Dia 1, 11h</div>
+            <div><span class="who">Helena:</span> Camila, voc&ecirc; soube que vai ter uma feira de artesanato na pra&ccedil;a no pr&oacute;ximo s&aacute;bado?</div>
+            <div><span class="who">Camila:</span> N&atilde;o sabia! Que legal!</div>
+            <div class="ev">&gt;&gt; Camila ficou sabendo da feira!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pagefoot">
+    <span>MICRO-SIMULA&Ccedil;&Atilde;O SOCIAL COM AGENTES GENERATIVOS</span>
+    <span>P. 1/2 — continua no verso &rarr;</span>
+  </div>
+</section>
+
+<!-- ================= PAGE 2 ================= -->
+<section class="page">
+
+  <!-- 04 RESULTADOS -->
+  <div class="sec" style="margin-top:0;">
+    <div class="sec-head" style="margin-top:0;">
+      <span class="sec-num">04</span>
+      <span class="sec-title">Resultados</span>
+      <span class="sec-kicker">consist&ecirc;ncia de persona + propaga&ccedil;&atilde;o de informa&ccedil;&atilde;o</span>
+    </div>
+    <div class="cols">
+
+      <!-- (a) Consistencia -->
+      <div class="chart-box">
+        <div class="chart-title">(a) Consist&ecirc;ncia de Persona</div>
+        <svg viewBox="0 0 320 178" width="100%" style="display:block;">
+          <!-- scale: 0 -> .40 maps x 64 -> 284 (5.5 px per .01) -->
+          <g font-size="8" fill="#111">
+            <!-- gridlines -->
+            <g stroke="#e4e4e4" stroke-width=".6">
+              <line x1="64" y1="6" x2="64" y2="158"/>
+              <line x1="119" y1="6" x2="119" y2="158"/>
+              <line x1="174" y1="6" x2="174" y2="158"/>
+              <line x1="229" y1="6" x2="229" y2="158"/>
+              <line x1="284" y1="6" x2="284" y2="158"/>
+            </g>
+            <!-- Helena .389/.311 d.078 -->
+            <text x="58" y="22" text-anchor="end">Helena</text>
+            <rect x="64" y="12" width="214" height="6.5" fill="#111"/>
+            <rect x="64" y="20" width="171" height="6.5" fill="#bbb"/>
+            <text x="284" y="22" font-size="7.5" fill="#E63312" font-weight="700" dx="4">&Delta;.078</text>
+            <!-- Roberto .333/.276 d.057 -->
+            <text x="58" y="52" text-anchor="end">Roberto</text>
+            <rect x="64" y="42" width="183" height="6.5" fill="#111"/>
+            <rect x="64" y="50" width="152" height="6.5" fill="#bbb"/>
+            <text x="253" y="52" font-size="7.5" fill="#E63312" font-weight="700" dx="4">&Delta;.057</text>
+            <!-- Camila .361/.334 d.027 -->
+            <text x="58" y="82" text-anchor="end">Camila</text>
+            <rect x="64" y="72" width="199" height="6.5" fill="#111"/>
+            <rect x="64" y="80" width="184" height="6.5" fill="#bbb"/>
+            <text x="269" y="82" font-size="7.5" fill="#E63312" font-weight="700" dx="4">&Delta;.027</text>
+            <!-- Marcos .356/.305 d.051 -->
+            <text x="58" y="112" text-anchor="end">Marcos</text>
+            <rect x="64" y="102" width="196" height="6.5" fill="#111"/>
+            <rect x="64" y="110" width="168" height="6.5" fill="#bbb"/>
+            <text x="266" y="112" font-size="7.5" fill="#E63312" font-weight="700" dx="4">&Delta;.051</text>
+            <!-- Julia .342/.306 d.036 -->
+            <text x="58" y="142" text-anchor="end">J&uacute;lia</text>
+            <rect x="64" y="132" width="188" height="6.5" fill="#111"/>
+            <rect x="64" y="140" width="168" height="6.5" fill="#bbb"/>
+            <text x="258" y="142" font-size="7.5" fill="#E63312" font-weight="700" dx="4">&Delta;.036</text>
+            <!-- axis -->
+            <line x1="64" y1="158" x2="284" y2="158" stroke="#111" stroke-width=".8"/>
+            <g font-size="6.5" fill="#888">
+              <text x="64" y="167" text-anchor="middle">.00</text>
+              <text x="119" y="167" text-anchor="middle">.10</text>
+              <text x="174" y="167" text-anchor="middle">.20</text>
+              <text x="229" y="167" text-anchor="middle">.30</text>
+              <text x="284" y="167" text-anchor="middle">.40</text>
+            </g>
+            <!-- legend -->
+            <rect x="64" y="172" width="7" height="5" fill="#111"/>
+            <text x="75" y="177" font-size="6.5" fill="#555">own</text>
+            <rect x="100" y="172" width="7" height="5" fill="#bbb"/>
+            <text x="111" y="177" font-size="6.5" fill="#555">cross</text>
+            <text x="284" y="177" font-size="6.5" fill="#555" text-anchor="end">similaridade m&eacute;dia</text>
+          </g>
+        </svg>
+        <div class="caption"><span class="acc">own &gt; cross em 5/5 agentes</span> — personas distingu&iacute;veis</div>
+      </div>
+
+      <!-- (b) Propagacao -->
+      <div class="chart-box">
+        <div class="chart-title">(b) Propaga&ccedil;&atilde;o da Informa&ccedil;&atilde;o</div>
+        <svg viewBox="0 0 320 178" width="100%" style="display:block;">
+          <!-- x: 7h->21h maps 40->300 (18.57/h) ; y: 0..5 agents maps 150->20 (26 per agent) -->
+          <g>
+            <!-- gridlines y -->
+            <g stroke="#e4e4e4" stroke-width=".6">
+              <line x1="40" y1="124" x2="300" y2="124"/>
+              <line x1="40" y1="98"  x2="300" y2="98"/>
+              <line x1="40" y1="72"  x2="300" y2="72"/>
+              <line x1="40" y1="46"  x2="300" y2="46"/>
+              <line x1="40" y1="20"  x2="300" y2="20"/>
+            </g>
+            <g font-size="6.5" fill="#888">
+              <text x="34" y="127" text-anchor="end">1</text>
+              <text x="34" y="101" text-anchor="end">2</text>
+              <text x="34" y="75" text-anchor="end">3</text>
+              <text x="34" y="49" text-anchor="end">4</text>
+              <text x="34" y="23" text-anchor="end">5</text>
+            </g>
+            <!-- step: 7h=1 ag; 10h=2; 11h=4; 17h=5  x(7)=40 x(10)=95.7 x(11)=114.3 x(17)=225.7 x(21)=300 -->
+            <path d="M40,124 H96 V98 H114 V46 H226 V20 H300" fill="none" stroke="#111" stroke-width="1.6"/>
+            <!-- event dots (red) -->
+            <g fill="#E63312">
+              <circle cx="40" cy="124" r="3.4"/>
+              <circle cx="96" cy="98" r="3.4"/>
+              <circle cx="114" cy="59" r="3.4"/>
+              <circle cx="114" cy="46" r="3.4"/>
+              <circle cx="226" cy="20" r="3.4"/>
+            </g>
+            <!-- labels -->
+            <g font-size="6.6" fill="#111">
+              <text x="44" y="116">Helena 7h (seed)</text>
+              <text x="100" y="91">J&uacute;lia 10h</text>
+              <text x="120" y="62">Camila 11h</text>
+              <text x="120" y="42">Roberto 11h</text>
+              <text x="222" y="13" text-anchor="end">Marcos 17h</text>
+            </g>
+            <!-- axes -->
+            <line x1="40" y1="150" x2="300" y2="150" stroke="#111" stroke-width=".8"/>
+            <line x1="40" y1="150" x2="40" y2="14" stroke="#111" stroke-width=".8"/>
+            <g font-size="6.5" fill="#888">
+              <text x="40" y="160" text-anchor="middle">7h</text>
+              <text x="96" y="160" text-anchor="middle">10h</text>
+              <text x="151" y="160" text-anchor="middle">13h</text>
+              <text x="207" y="160" text-anchor="middle">16h</text>
+              <text x="263" y="160" text-anchor="middle">19h</text>
+              <text x="300" y="160" text-anchor="middle">21h</text>
+            </g>
+            <text x="170" y="172" font-size="6.5" fill="#555" text-anchor="middle">DIA 1 — agentes informados ao longo das horas</text>
+          </g>
+        </svg>
+        <div class="caption"><span class="acc">100% informados ainda no Dia 1</span> — 5/5 agentes em 10h de vila</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05 DISCUSSAO -->
+  <div class="sec disc">
+    <div class="sec-head">
+      <span class="sec-num">05</span>
+      <span class="sec-title">Discuss&atilde;o</span>
+      <span class="sec-kicker">o que a escala m&iacute;nima preserva — e o que perde</span>
+    </div>
+    <div class="cols">
+      <div>
+        <h3><span class="mark">+</span> O que funcionou</h3>
+        <ul class="tight">
+          <li>Personas distingu&iacute;veis em <b>5/5 agentes</b> (&Delta; m&eacute;dio +0,05 own vs cross)</li>
+          <li>Propaga&ccedil;&atilde;o de informa&ccedil;&atilde;o atingiu <b>100% ainda no Dia 1</b></li>
+          <li>Reflex&otilde;es geradas coerentes com persona e hist&oacute;rico de cada agente</li>
+          <li>Modo <b>mock determin&iacute;stico</b>: simula&ccedil;&atilde;o reprodut&iacute;vel sem custo de API</li>
+        </ul>
+      </div>
+      <div>
+        <h3><span class="mark">&minus;</span> Limita&ccedil;&otilde;es</h3>
+        <ul class="tight">
+          <li>5 agentes limitam din&acirc;micas de grupo (coaliz&otilde;es, normas sociais)</li>
+          <li>Modo mock &eacute; menos rico que LLM real nas conversas e reflex&otilde;es</li>
+          <li>An&aacute;lise de emerg&ecirc;ncia feita via logs textuais, sem visualiza&ccedil;&atilde;o</li>
+          <li>Custo de <b>~US$ 0,50/simula&ccedil;&atilde;o</b> com gpt-4o-mini (3 dias virtuais)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="next"><b>Pr&oacute;ximos passos</b> &nbsp;&middot;&nbsp; escalar para 15–20 agentes &nbsp;&middot;&nbsp; visualiza&ccedil;&atilde;o 2D da vila e dos encontros</div>
+  </div>
+
+  <!-- 06 REFERENCIAS -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-num">06</span>
+      <span class="sec-title">Refer&ecirc;ncias</span>
+    </div>
+    <div class="refs">
+      <div class="ref"><span class="n">[1]</span> PARK, J. S. et al. Generative Agents: Interactive Simulacra of Human Behavior. <i>UIST '23</i>, ACM, 2023.</div>
+      <div class="ref"><span class="n">[2]</span> PARK, J. S. et al. Generative Agent Simulations of 1,000 People. <i>arXiv:2411.10109</i>, 2024.</div>
+      <div class="ref"><span class="n">[3]</span> PIAO, J. et al. AgentSociety. <i>arXiv:2502.08691</i>, 2025.</div>
+      <div class="ref"><span class="n">[4]</span> MOU, X. et al. From Individual to Society (survey). <i>arXiv:2412.03563</i>, 2024.</div>
+      <div class="ref"><span class="n">[5]</span> SUMERS, T. et al. Cognitive Architectures for Language Agents. <i>TMLR</i>, 2024.</div>
+      <div class="ref"><span class="n">[6]</span> SHINN, N. et al. Reflexion. <i>NeurIPS</i>, 2023.</div>
+      <div class="ref"><span class="n">[7]</span> ANTHROPIC. Building Effective Agents. 2024.</div>
+      <div class="ref"><span class="n">[8]</span> OPENAI. Platform Docs. 2026.</div>
+    </div>
+  </div>
+
+  <!-- FOOT / QR -->
+  <div class="foot">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyCAIAAABnRsZeAAAHsUlEQVR4nO3dwY0rRxJAQY0wBsiZNUiWrUHrjDzgXr8uBUH1ClndE3EfdrNJPtQhkfP1+Xx+A+j8Pn0DwNvIChCTFSAmK0BMVoCYrAAxWQFisgLEZAWIyQoQkxUgJitATFaAmKwAMVkBYrICxGQFiMkKEJMVIPa988d//OfP6j4u8df//vuv//bc09i5qx3rd7S+q6nvxs5d3fnpT9l5Gk4rQExWgJisADFZAWKyAsRkBYjJChCTFSAmK0Bsa8p2bWo2dO2J05/nPPFp7Hyvpr6TP+234LQCxGQFiMkKEJMVICYrQExWgJisADFZAWKyAsQOTtmuPXHz6849n5scPXfdnfd7bo723F1NeeJvYc1pBYjJChCTFSAmK0BMVoCYrAAxWQFisgLEZAWIjU3Zvs/OROO5ydGprbHv20fLP+e0AsRkBYjJChCTFSAmK0BMVoCYrAAxWQFisgLETNlm7pwrPbd/d+3OmeOpjcI/jdMKEJMVICYrQExWgJisADFZAWKyAsRkBYjJChAbm7J930TjE+c7z113akJ357WnPqP3/RacVoCYrAAxWQFisgLEZAWIyQoQkxUgJitATFaA2MEp2505S341Nf05tZ1357p3TjP/tN+C0woQkxUgJitATFaAmKwAMVkBYrICxGQFiMkKEPv6fD7T9/AYd+5nXZuaWJ2aK33fXtgncloBYrICxGQFiMkKEJMVICYrQExWgJisADFZAWJbU7ZPnMJce98s7NrO+zVH+yvf5185rQAxWQFisgLEZAWIyQoQkxUgJitATFaAmKwAse9zL33nDO65ucP3zVm+b3535zt5ztRv4dzTcFoBYrICxGQFiMkKEJMVICYrQExWgJisADFZAWJbu2zX7tx1em7296fN767d+TTunO1+4ibjNacVICYrQExWgJisADFZAWKyAsRkBYjJChCTFSB2cJft2rldp0+coz1naqfs+57k2vumiu2yBS4iK0BMVoCYrAAxWQFisgLEZAWIyQoQkxUgtrXL9omTlFP7StfOPck7Z47v3Ed758bZtTt/ZU4rQExWgJisADFZAWKyAsRkBYjJChCTFSAmK0Bsa8p2x7m5w7UnTlKuvW+6d8e5Kdv3XXfNLlvgIrICxGQFiMkKEJMVICYrQExWgJisADFZAWJ22f7NE+95bWrz646p/bt3TqzeeVdrTitATFaAmKwAMVkBYrICxGQFiMkKEJMVICYrQOx76sJT853nZjTX7pyU3bnu2s6TnJqjvXNX8Y6pqXGnFSAmK0BMVoCYrAAxWQFisgLEZAWIyQoQkxUgNjZlu+POWcmpLblTk5RTE8nnPl+T0NUrO60AMVkBYrICxGQFiMkKEJMVICYrQExWgJisALGvz+czcuGpmdQdU9OfU6+8Y2rzq13FFVO2wEVkBYjJChCTFSAmK0BMVoCYrAAxWQFisgLExqZs1943z7pz3R1T93zuE5x6Vu+bwT33JJ1WgJisADFZAWKyAsRkBYjJChCTFSAmK0BMVoDYwSlbM4s3vPK55zz1Ce6YehpT73fNlC3wGLICxGQFiMkKEJMVICYrQExWgJisADFZAWLfO388tXN0x7l5xzsnKad2nT7xund+gmt3Tvc6rQAxWQFisgLEZAWIyQoQkxUgJitATFaAmKwAsa1dtndufj133alttefcec/2/v7zV16behpOK0BMVoCYrAAxWQFisgLEZAWIyQoQkxUgJitA7OCU7dQ869Rk4ZQ7J2XXnvgp3DmBfeen77QCxGQFiMkKEJMVICYrQExWgJisADFZAWKyAsS+py78xDnaqQ275/52bWqu9M7nvPbEb905TitATFaAmKwAMVkBYrICxGQFiMkKEJMVICYrQGxsynbK1O7Pc7OSU3th3zcJPfUZrd252XfNaQWIyQoQkxUgJitATFaAmKwAMVkBYrICxGQFiH19Pp/pe3iMO+dK16b20e6YehprT/yMpr6TTitATFaAmKwAMVkBYrICxGQFiMkKEJMVICYrQGxrl+0T/5f92nqycGfu8Nx+1p17PvcJTu2jndr8OjVFvTZ1V04rQExWgJisADFZAWKyAsRkBYjJChCTFSAmK0Bsa8p27c7/dL8zwfm+ScpzM7h37u495853ZJct8BKyAsRkBYjJChCTFSAmK0BMVoCYrAAxWQFiB6ds1+7covpEU+93ajvvuVde/+2dm5undhWvOa0AMVkBYrICxGQFiMkKEJMVICYrQExWgJisALGxKdv3ObdzdOe657aZTr3fnVe+c7b7zh3JO5xWgJisADFZAWKyAsRkBYjJChCTFSAmK0BMVoCYKdvMuT2pU3OWP21ueMe5Z3XnNPOa0woQkxUgJitATFaAmKwAMVkBYrICxGQFiMkKEBubsn3ihs73TUOu3XlX5/bR7lz33FTxEzmtADFZAWKyAsRkBYjJChCTFSAmK0BMVoCYrACxg1O275sdnJqzfOK069TG2Z2dwTumdtneudnXaQWIyQoQkxUgJitATFaAmKwAMVkBYrICxGQFiH19Pp/pewBexWkFiMkKEJMVICYrQExWgJisADFZAWKyAsRkBYjJChCTFSAmK0BMVoCYrAAxWQFisgLEZAWIyQoQkxUg9n9Z7PUDCtbtRAAAAABJRU5ErkJggg==" alt="QR code do repositório">
+    <div>
+      <div class="repo">github.com/xSh4doow/generative-agents-sim</div>
+      <div class="repo-sub">c&oacute;digo &middot; logs completos &middot; m&eacute;tricas &middot; demo GIF da simula&ccedil;&atilde;o</div>
+    </div>
+    <div class="endmark">
+      <div class="g7">G<span>7</span></div>
+      <div class="sub">PUC-CAMPINAS &middot; 12463 &middot; 2026/1 &middot; P. 2/2</div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

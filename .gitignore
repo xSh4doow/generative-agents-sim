@@ -7,3 +7,5 @@ output/*.md
 .venv/
 *.egg-info/
 dist/
+_temp/
+painel_build/
